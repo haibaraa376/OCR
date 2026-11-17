@@ -2,82 +2,121 @@ import cv2
 import numpy as np
 
 
-def _cluster(values, tolerance, minimum=1):
+def _line_mask(binary, horizontal):
+    """长核过滤文字，短核修补断线；长度随表格分辨率缩放。"""
+    extent = binary.shape[1 if horizontal else 0]
+    length, gap = max(3, round(extent*.035)), max(1, round(extent*.004))
+    shape = lambda n: (n, 1) if horizontal else (1, n)
+    repaired = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, np.ones(shape(gap)[::-1], np.uint8))
+    return cv2.morphologyEx(repaired, cv2.MORPH_OPEN, np.ones(shape(length)[::-1], np.uint8))
+
+
+def _boundaries(mask, cross, horizontal):
+    """只接受长线或接触至少两个交点的局部线；PP 框不创建边界。"""
+    n, labels, stats, centers = cv2.connectedComponentsWithStats(mask)
+    extent = mask.shape[1 if horizontal else 0]
+    perpendicular = mask.shape[0 if horizontal else 1]
+    tolerance = max(1, perpendicular*.012)
+    dilated = cv2.dilate(cross, np.ones((3, 3), np.uint8))
+    candidates = []
+    for i in range(1, n):
+        x, y, w, h, area = stats[i]
+        length, thickness = (w, h) if horizontal else (h, w)
+        intersections = cv2.connectedComponents(((labels[y:y+h, x:x+w]==i) & (dilated[y:y+h, x:x+w]>0)).astype(np.uint8))[0]-1
+        if length < extent*.045 or thickness > max(length*.12, perpendicular*.012):
+            continue
+        if intersections < 2 and length < extent*.28:
+            continue
+        coordinate = centers[i][1 if horizontal else 0]
+        candidates.append((coordinate, length))
     groups = []
-    for value in sorted(values):
-        if not groups or value - groups[-1][-1] > tolerance:
-            groups.append([value])
+    for coordinate, weight in sorted(candidates):
+        if groups and coordinate - groups[-1][-1][0] < tolerance:
+            groups[-1].append((coordinate, weight))
         else:
-            groups[-1].append(value)
-    return [int(np.median(group)) for group in groups if len(group) >= minimum]
+            groups.append([(coordinate, weight)])
+    return [int(round(sum(a*b for a,b in g)/sum(b for a,b in g))) for g in groups]
 
 
-def _lines(binary, horizontal):
-    h, w = binary.shape
-    length = (w if horizontal else h)
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (max(20, length // 35), 1) if horizontal else (1, max(20, length // 35)))
-    opened = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
-    # 小间隙闭合，保留局部边框。
-    gap = cv2.getStructuringElement(cv2.MORPH_RECT, (max(5, length // 160), 1) if horizontal else (1, max(5, length // 160)))
-    return cv2.morphologyEx(opened, cv2.MORPH_CLOSE, gap)
-
-
-def _coordinates(mask, horizontal, cell_boxes, offset, limit):
-    projection = (mask > 0).sum(axis=1 if horizontal else 0)
-    span = mask.shape[1 if horizontal else 0]
-    strong = np.where(projection >= max(15, span * .10))[0].tolist()
-    # PP 单元格框只辅助补足局部线，避免文字框生成额外行。
-    candidates = _cluster(strong, max(3, limit // 300))
-    edges = []
-    for box in cell_boxes:
-        edges.extend([box[1 if horizontal else 0] - offset, box[3 if horizontal else 2] - offset])
-    for edge in _cluster(edges, max(5, limit // 100), 3):
-        support = projection[max(0, edge - 4):min(limit, edge + 5)].max(initial=0)
-        if 0 <= edge < limit and (horizontal or support > span * .06) and all(abs(edge - item) > max(5, limit // 100) for item in candidates):
-            candidates.append(edge)
-    return sorted(candidates)
-
-
-def _covered(mask, x1, y1, x2, y2, horizontal):
-    h, w = mask.shape
+def _support(mask, coordinate, start, end, horizontal):
+    """返回边界覆盖比例，允许线条在细小范围内偏移。"""
+    radius = max(1, round(min(mask.shape)*.003))
+    margin = min(round((end-start)*.08), radius*2)
     if horizontal:
-        y = int(np.clip((y1 + y2) / 2, 0, h - 1))
-        a, b = max(0, int(x1 + 2)), min(w, int(x2 - 2))
-        strip = mask[max(0, y - 3):min(h, y + 4), a:b]
-        return bool(strip.size and np.mean(np.any(strip > 0, axis=0)) > .38)
-    x = int(np.clip((x1 + x2) / 2, 0, w - 1))
-    a, b = max(0, int(y1 + 2)), min(h, int(y2 - 2))
-    strip = mask[a:b, max(0, x - 3):min(w, x + 4)]
-    return bool(strip.size and np.mean(np.any(strip > 0, axis=1)) > .38)
+        strip = mask[max(0, coordinate-radius):coordinate+radius+1, start+margin:end-margin]
+        axis = 0
+    else:
+        strip = mask[start+margin:end-margin, max(0, coordinate-radius):coordinate+radius+1]
+        axis = 1
+    return float(np.any(strip, axis=axis).mean()) if strip.size else 0.
 
 
-def _cells(xs, ys, horizontal, vertical, boxes):
-    rows, cols = len(ys) - 1, len(xs) - 1
-    used = np.zeros((rows, cols), bool)
-    cells = []
-    for r in range(rows):
-        for c in range(cols):
-            if used[r, c]:
-                continue
-            end_c = c + 1
-            while end_c < cols and not used[r, end_c] and not _covered(vertical, xs[end_c], ys[r], xs[end_c], ys[r + 1], False) and any(
-                b[0] < xs[end_c] - 3 < xs[end_c] + 3 < b[2] and b[1] < (ys[r] + ys[r + 1]) / 2 < b[3] for b in boxes
-            ):
-                end_c += 1
-            end_r = r + 1
-            while end_r < rows and not used[end_r, c:end_c].any() and all(
-                not _covered(horizontal, xs[k], ys[end_r], xs[k + 1], ys[end_r], True)
-                for k in range(c, end_c)
-            ) and any(b[1] < ys[end_r] - 3 < ys[end_r] + 3 < b[3] and
-                      b[0] < (xs[c] + xs[end_c]) / 2 < b[2] for b in boxes):
-                end_r += 1
-            used[r:end_r, c:end_c] = True
-            cells.append({"row": r, "col": c, "rowspan": end_r - r, "colspan": end_c - c,
-                          "bbox": [xs[c], ys[r], xs[end_c], ys[end_r]], "text": ""})
-    return cells
+def _topology(xs, ys, hm, vm, boxes):
+    """缺边连接形成连通区域；仅接受矩形、且内部没有实线的合并。"""
+    nr, nc = len(ys)-1, len(xs)-1
+    hb = [[_support(hm, y, xs[c], xs[c+1], True) for c in range(nc)] for y in ys]
+    vb = [[_support(vm, x, ys[r], ys[r+1], False) for x in xs] for r in range(nr)]
+    # 并查集把可跨越的基础格连起来；每个编号对应 row * 列数 + col。
+    parent = list(range(nr*nc))
+    uncertain = set()
+    def find(i):
+        while parent[i]!=i:
+            parent[i]=parent[parent[i]]; i=parent[i]
+        return i
+    def connect(a, b, support, x, y):
+        # 低覆盖且有 PP 跨界证据时合并；有少量墨迹但不确定的边保留标记。
+        crosses = any(q[0]<x<q[2] and q[1]<y<q[3] for q in boxes)
+        if support < .12 or (support < .3 and crosses):
+            parent[find(a)] = find(b)
+        elif support < .55:
+            uncertain.update((a,b))
+    for r in range(nr):
+        for c in range(nc):
+            i=r*nc+c
+            if c+1<nc:
+                connect(i,i+1,vb[r][c+1],xs[c+1],(ys[r]+ys[r+1])/2)
+            if r+1<nr:
+                connect(i,i+nc,hb[r+1][c],(xs[c]+xs[c+1])/2,ys[r+1])
+    groups={}
+    for i in range(nr*nc):
+        groups.setdefault(find(i),[]).append(divmod(i,nc))
+    cells=[]
+    for group in groups.values():
+        r0,c0=np.min(group,axis=0).tolist(); r1,c1=(np.max(group,axis=0)+1).tolist()
+        rectangular = len(group)==(r1-r0)*(c1-c0)
+        internal = any(hb[r][c]>.55 for r in range(r0+1,r1) for c in range(c0,c1)) or any(vb[r][c]>.55 for r in range(r0,r1) for c in range(c0+1,c1))
+        regions=[]
+        remaining=set(group)
+        # L 形连通区域不能直接合并：拆成内部无实线的最大矩形。
+        # 优先保留长条单元格，避免把整个连通分量退化成一堆小格。
+        while remaining:
+            best=None; best_score=-1
+            for a,b in sorted(remaining):
+                for d in range(a+1,r1+1):
+                    for e in range(b+1,c1+1):
+                        if any((r,c) not in remaining for r in range(a,d) for c in range(b,e)):
+                            break
+                        if any(hb[r][c]>.4 for r in range(a+1,d) for c in range(b,e)) or any(vb[r][c]>.4 for r in range(a,d) for c in range(b+1,e)):
+                            continue
+                        score=(xs[e]-xs[b])*(ys[d]-ys[a])
+                        if score>best_score:
+                            best=(a,b,d,e);best_score=score
+            a,b,d,e=best
+            regions.append(best)
+            remaining.difference_update((r,c) for r in range(a,d) for c in range(b,e))
+        for a,b,d,e in regions:
+            borders={'top':hb[a][b:e], 'bottom':hb[d][b:e],
+                     'left':[vb[r][b] for r in range(a,d)], 'right':[vb[r][e] for r in range(a,d)]}
+            cells.append({'row':a,'col':b,'rowspan':d-a,'colspan':e-b,
+                          'bbox':[xs[b],ys[a],xs[e],ys[d]],
+                          'borders':{k:any(v>.4 for v in values) for k,values in borders.items()},
+                          'border_support':borders,
+                          'uncertain':not rectangular or internal or any(r*nc+c in uncertain for r in range(a,d) for c in range(b,e)), 'text':''})
+    return cells, hb, vb
 
 
 def _fill_text(cells, ocr):
+    """按文字框中心分配文本；只填内容，不参与行列或合并判断。"""
     boxes = ocr.get("rec_boxes", [])
     texts = ocr.get("rec_texts", [])
     for box, text in zip(boxes, texts):
@@ -91,42 +130,39 @@ def _fill_text(cells, ocr):
         cell["text"] = "\n".join(item[2] for item in sorted(cell.pop("_items", [])))
 
 
-def recover_tables(image, result):
-    """PP 定位表格，OpenCV 恢复网格；坐标均为当前纸页像素坐标。"""
-    blocks = [block for block in result.get("parsing_res_list", []) if block.get("block_label") == "table"]
-    pp_tables = result.get("table_res_list", [])
-    tables = []
-    for block in blocks:
-        x1, y1, x2, y2 = map(int, block["block_bbox"])
-        x1, y1 = max(0, x1), max(0, y1)
-        x2, y2 = min(image.shape[1], x2), min(image.shape[0], y2)
-        if x2 - x1 < 30 or y2 - y1 < 30:
+def recover_tables(image, result, debug_dir=None):
+    """结构仅依赖几何证据；文字分配在拓扑恢复完成后执行。"""
+    tables=[]
+    overlay=image.copy(); line_view=np.zeros_like(image)
+    for block in result.get('parsing_res_list', []):
+        if block.get('block_label')!='table':
             continue
-        crop = image[y1:y2, x1:x2]
-        gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
-        binary = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-                                       cv2.THRESH_BINARY_INV, 31, 12)
-        horizontal, vertical = _lines(binary, True), _lines(binary, False)
-        match = max(pp_tables, key=lambda t: sum(
-            x1 <= (b[0] + b[2]) / 2 <= x2 and y1 <= (b[1] + b[3]) / 2 <= y2
-            for b in t.get("cell_box_list", [])), default={})
-        boxes = match.get("cell_box_list", [])
-        xs = _coordinates(vertical, False, boxes, x1, x2 - x1)
-        ys = _coordinates(horizontal, True, boxes, y1, y2 - y1)
-        # 页面边缘补全，不靠 OCR 文字推断表格行。
-        for coords, size in ((xs, x2 - x1), (ys, y2 - y1)):
-            if not coords or coords[0] > size * .03:
-                coords.insert(0, 0)
-            if coords[-1] < size * .97:
-                coords.append(size)
-        if len(xs) < 2 or len(ys) < 2:
+        x1,y1,x2,y2=map(int,block['block_bbox'])
+        x1,y1=max(0,x1),max(0,y1); x2,y2=min(image.shape[1],x2),min(image.shape[0],y2)
+        gray=cv2.cvtColor(image[y1:y2,x1:x2],cv2.COLOR_BGR2GRAY)
+        if min(gray.shape)<10:
             continue
-        local_boxes = [[b[0] - x1, b[1] - y1, b[2] - x1, b[3] - y1] for b in boxes]
-        cells = _cells(xs, ys, horizontal, vertical, local_boxes)
-        xs, ys = [x + x1 for x in xs], [y + y1 for y in ys]
+        window=max(3,round(min(gray.shape)*.03)//2*2+1)
+        binary=cv2.adaptiveThreshold(gray,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY_INV,window,7)
+        hm,vm=_line_mask(binary,True),_line_mask(binary,False)
+        xs,ys=_boundaries(vm,hm,False),_boundaries(hm,vm,True)
+        if len(xs)<2 or len(ys)<2:
+            continue
+        candidates=[b for t in result.get('table_res_list',[]) for b in t.get('cell_box_list',[])
+                    if x1<=(b[0]+b[2])/2<=x2 and y1<=(b[1]+b[3])/2<=y2]
+        boxes=[[a-x1,b-y1,c-x1,d-y1] for a,b,c,d in candidates]
+        cells,hb,vb=_topology(xs,ys,hm,vm,boxes)
         for cell in cells:
-            a, b, c, d = cell["bbox"]
-            cell["bbox"] = [a + x1, b + y1, c + x1, d + y1]
-        _fill_text(cells, result.get("overall_ocr_res", {}))
-        tables.append({"bbox": [x1, y1, x2, y2], "columns": xs, "rows": ys, "cells": cells})
+            a,b,c,d=cell['bbox']; cell['bbox']=[a+x1,b+y1,c+x1,d+y1]
+            color=(0,140,255) if cell['uncertain'] else (0,190,0)
+            cv2.rectangle(overlay,(a+x1,b+y1),(c+x1,d+y1),color,2)
+        _fill_text(cells,result.get('overall_ocr_res',{}))
+        line_view[y1:y2,x1:x2,1]=cv2.max(hm,line_view[y1:y2,x1:x2,1])
+        line_view[y1:y2,x1:x2,2]=cv2.max(vm,line_view[y1:y2,x1:x2,2])
+        tables.append({'bbox':[xs[0]+x1,ys[0]+y1,xs[-1]+x1,ys[-1]+y1],
+                       'columns':[x+x1 for x in xs], 'rows':[y+y1 for y in ys],
+                       'horizontal_edges':hb,'vertical_edges':vb,'cells':cells})
+    if debug_dir is not None:
+        for name,img in [('lines.png',line_view),('grid_overlay.png',overlay)]:
+            cv2.imencode('.png',img)[1].tofile(str(debug_dir/name))
     return tables

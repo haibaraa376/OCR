@@ -7,7 +7,9 @@ pipeline = PPStructureV3(
     use_doc_orientation_classify=False,
     use_doc_unwarping=False,
     use_textline_orientation=False,
-    use_chart_recognition=False
+    use_chart_recognition=False,
+    # 手写技术说明容易被当成公式，当前优先识别普通文字。
+    use_formula_recognition=False
 )
 
 # 识别技术文档
