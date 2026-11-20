@@ -196,8 +196,8 @@
               1.0,
               1.0,
               1.0,
-              0.0,
-              0.0,
+              1.0,
+              1.0,
               1.0,
               1.0,
               1.0,
@@ -219,7 +219,7 @@
               1.0
             ],
             [
-              0.9683794466403162,
+              1.0,
               1.0,
               1.0,
               0.8814229249011858,
@@ -233,7 +233,7 @@
             ],
             [
               1.0,
-              0.8884057971014493,
+              1.0,
               0.6318840579710145,
               0.6246376811594203,
               0.6,
@@ -242,19 +242,19 @@
               0.6333333333333333,
               0.6043478260869565,
               0.7101449275362319,
-              0.9072463768115943
+              1.0
             ]
           ],
           "cells": [
             {
               "row": 0,
-              "col": 9,
+              "col": 1,
               "rowspan": 3,
               "colspan": 1,
               "bbox": [
-                907,
+                188,
                 105,
-                1413,
+                374,
                 379
               ],
               "borders": {
@@ -268,29 +268,69 @@
                   1.0
                 ],
                 "bottom": [
-                  1.0
+                  0.9235294117647059
                 ],
                 "left": [
                   0.0,
+                  0.31333333333333335,
+                  1.0
+                ],
+                "right": [
+                  0.0,
+                  0.19333333333333333,
+                  1.0
+                ]
+              },
+              "uncertain": true,
+              "text": "作业名称\n及\n纯钻时间"
+            },
+            {
+              "row": 0,
+              "col": 0,
+              "rowspan": 4,
+              "colspan": 1,
+              "bbox": [
+                141,
+                105,
+                188,
+                463
+              ],
+              "borders": {
+                "top": true,
+                "bottom": false,
+                "left": true,
+                "right": true
+              },
+              "border_support": {
+                "top": [
+                  0.9230769230769231
+                ],
+                "bottom": [
+                  0.20512820512820512
+                ],
+                "left": [
+                  0.0,
+                  0.9333333333333333,
                   1.0,
                   1.0
                 ],
                 "right": [
                   0.0,
-                  0.8066666666666666,
+                  0.31333333333333335,
+                  1.0,
                   1.0
                 ]
               },
               "uncertain": true,
-              "text": "岩层名称\n及特征"
+              "text": "月日及班次时间\n1"
             },
             {
               "row": 0,
-              "col": 0,
+              "col": 2,
               "rowspan": 2,
-              "colspan": 5,
+              "colspan": 3,
               "bbox": [
-                141,
+                374,
                 105,
                 579,
                 320
@@ -298,27 +338,23 @@
               "borders": {
                 "top": true,
                 "bottom": true,
-                "left": true,
+                "left": false,
                 "right": true
               },
               "border_support": {
                 "top": [
-                  0.9230769230769231,
-                  1.0,
                   1.0,
                   1.0,
                   1.0
                 ],
                 "bottom": [
-                  0.0,
-                  0.0,
                   1.0,
                   1.0,
                   1.0
                 ],
                 "left": [
                   0.0,
-                  0.9333333333333333
+                  0.19333333333333333
                 ],
                 "right": [
                   0.0,
@@ -326,7 +362,7 @@
                 ]
               },
               "uncertain": true,
-              "text": "作业名称\n钻进深度\n(m)\n(取原样及\n及\n月日及班次时间\n试验深度）"
+              "text": "钻进深度\n(m)\n(取原样及\n试验深度）"
             },
             {
               "row": 0,
@@ -405,74 +441,42 @@
               "text": "岩心"
             },
             {
-              "row": 2,
-              "col": 1,
-              "rowspan": 1,
+              "row": 0,
+              "col": 9,
+              "rowspan": 3,
               "colspan": 1,
               "bbox": [
-                188,
-                320,
-                374,
+                907,
+                105,
+                1413,
                 379
               ],
               "borders": {
-                "top": false,
+                "top": true,
                 "bottom": true,
                 "left": true,
                 "right": true
               },
               "border_support": {
                 "top": [
-                  0.0
-                ],
-                "bottom": [
-                  0.9235294117647059
-                ],
-                "left": [
                   1.0
                 ],
-                "right": [
-                  1.0
-                ]
-              },
-              "uncertain": true,
-              "text": "纯钻时间"
-            },
-            {
-              "row": 2,
-              "col": 0,
-              "rowspan": 2,
-              "colspan": 1,
-              "bbox": [
-                141,
-                320,
-                188,
-                463
-              ],
-              "borders": {
-                "top": false,
-                "bottom": false,
-                "left": true,
-                "right": true
-              },
-              "border_support": {
-                "top": [
-                  0.0
-                ],
                 "bottom": [
-                  0.20512820512820512
+                  1.0
                 ],
                 "left": [
+                  0.0,
                   1.0,
                   1.0
                 ],
                 "right": [
-                  1.0,
+                  0.0,
+                  0.8066666666666666,
                   1.0
                 ]
               },
               "uncertain": true,
-              "text": "1"
+              "text": "岩层名称\n及特征"
             },
             {
               "row": 1,
@@ -586,9 +590,77 @@
               "row": 2,
               "col": 2,
               "rowspan": 1,
-              "colspan": 3,
+              "colspan": 1,
               "bbox": [
                 374,
+                320,
+                442,
+                379
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": true,
+                "right": true
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  1.0
+                ],
+                "right": [
+                  1.0
+                ]
+              },
+              "uncertain": false,
+              "text": ""
+            },
+            {
+              "row": 2,
+              "col": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "bbox": [
+                442,
+                320,
+                513,
+                379
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": true,
+                "right": true
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  1.0
+                ],
+                "right": [
+                  1.0
+                ]
+              },
+              "uncertain": false,
+              "text": "由至共"
+            },
+            {
+              "row": 2,
+              "col": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "bbox": [
+                513,
                 320,
                 579,
                 379
@@ -601,13 +673,9 @@
               },
               "border_support": {
                 "top": [
-                  1.0,
-                  1.0,
                   1.0
                 ],
                 "bottom": [
-                  1.0,
-                  1.0,
                   1.0
                 ],
                 "left": [
@@ -618,7 +686,7 @@
                 ]
               },
               "uncertain": false,
-              "text": "由至共"
+              "text": ""
             },
             {
               "row": 3,
@@ -658,9 +726,77 @@
               "row": 3,
               "col": 2,
               "rowspan": 1,
-              "colspan": 3,
+              "colspan": 1,
               "bbox": [
                 374,
+                379,
+                442,
+                463
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": true,
+                "right": false
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  1.0
+                ],
+                "right": [
+                  0.0
+                ]
+              },
+              "uncertain": true,
+              "text": ""
+            },
+            {
+              "row": 3,
+              "col": 3,
+              "rowspan": 1,
+              "colspan": 1,
+              "bbox": [
+                442,
+                379,
+                513,
+                463
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": false,
+                "right": false
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  0.0
+                ],
+                "right": [
+                  0.0
+                ]
+              },
+              "uncertain": true,
+              "text": "3"
+            },
+            {
+              "row": 3,
+              "col": 4,
+              "rowspan": 1,
+              "colspan": 1,
+              "bbox": [
+                513,
                 379,
                 579,
                 463
@@ -668,29 +804,25 @@
               "borders": {
                 "top": true,
                 "bottom": true,
-                "left": true,
+                "left": false,
                 "right": true
               },
               "border_support": {
                 "top": [
-                  1.0,
-                  1.0,
                   1.0
                 ],
                 "bottom": [
-                  1.0,
-                  1.0,
                   1.0
                 ],
                 "left": [
-                  1.0
+                  0.0
                 ],
                 "right": [
                   1.0
                 ]
               },
-              "uncertain": false,
-              "text": "3"
+              "uncertain": true,
+              "text": ""
             },
             {
               "row": 3,
@@ -730,9 +862,77 @@
               "row": 3,
               "col": 6,
               "rowspan": 1,
-              "colspan": 3,
+              "colspan": 1,
               "bbox": [
                 652,
+                379,
+                738,
+                463
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": true,
+                "right": false
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  1.0
+                ],
+                "right": [
+                  0.0
+                ]
+              },
+              "uncertain": true,
+              "text": ""
+            },
+            {
+              "row": 3,
+              "col": 7,
+              "rowspan": 1,
+              "colspan": 1,
+              "bbox": [
+                738,
+                379,
+                825,
+                463
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": false,
+                "right": false
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  0.0
+                ],
+                "right": [
+                  0.0
+                ]
+              },
+              "uncertain": true,
+              "text": "5"
+            },
+            {
+              "row": 3,
+              "col": 8,
+              "rowspan": 1,
+              "colspan": 1,
+              "bbox": [
+                825,
                 379,
                 907,
                 463
@@ -740,29 +940,25 @@
               "borders": {
                 "top": true,
                 "bottom": true,
-                "left": true,
+                "left": false,
                 "right": true
               },
               "border_support": {
                 "top": [
-                  1.0,
-                  1.0,
                   1.0
                 ],
                 "bottom": [
-                  1.0,
-                  1.0,
                   1.0
                 ],
                 "left": [
-                  1.0
+                  0.0
                 ],
                 "right": [
                   1.0
                 ]
               },
-              "uncertain": false,
-              "text": "5"
+              "uncertain": true,
+              "text": ""
             },
             {
               "row": 3,
@@ -823,7 +1019,7 @@
                   1.0
                 ],
                 "left": [
-                  0.9683794466403162
+                  1.0
                 ],
                 "right": [
                   1.0
@@ -1142,7 +1338,7 @@
                 ],
                 "right": [
                   1.0,
-                  0.9072463768115943
+                  1.0
                 ]
               },
               "uncertain": false,
@@ -1176,7 +1372,7 @@
                   1.0
                 ],
                 "right": [
-                  0.8884057971014493
+                  1.0
                 ]
               },
               "uncertain": false,
@@ -1207,7 +1403,7 @@
                   1.0
                 ],
                 "left": [
-                  0.8884057971014493
+                  1.0
                 ],
                 "right": [
                   0.6318840579710145
@@ -1586,7 +1782,7 @@
               0.0,
               0.0,
               0.0,
-              0.0,
+              1.0,
               1.0
             ],
             [
@@ -1686,7 +1882,7 @@
               1.0,
               0.8412698412698413,
               1.0,
-              0.9642857142857143,
+              1.0,
               1.0,
               0.9761904761904762,
               0.8412698412698413,
@@ -1847,42 +2043,6 @@
             },
             {
               "row": 0,
-              "col": 14,
-              "rowspan": 2,
-              "colspan": 1,
-              "bbox": [
-                1157,
-                149,
-                1355,
-                421
-              ],
-              "borders": {
-                "top": true,
-                "bottom": true,
-                "left": true,
-                "right": true
-              },
-              "border_support": {
-                "top": [
-                  1.0
-                ],
-                "bottom": [
-                  1.0
-                ],
-                "left": [
-                  0.0,
-                  0.5863874345549738
-                ],
-                "right": [
-                  1.0,
-                  1.0
-                ]
-              },
-              "uncertain": true,
-              "text": "注"
-            },
-            {
-              "row": 0,
               "col": 6,
               "rowspan": 1,
               "colspan": 8,
@@ -1896,7 +2056,7 @@
                 "top": true,
                 "bottom": true,
                 "left": true,
-                "right": false
+                "right": true
               },
               "border_support": {
                 "top": [
@@ -1923,11 +2083,47 @@
                   0.45454545454545453
                 ],
                 "right": [
-                  0.0
+                  1.0
                 ]
               },
               "uncertain": true,
               "text": "标贯试验\n含水量\n送试验件"
+            },
+            {
+              "row": 0,
+              "col": 14,
+              "rowspan": 2,
+              "colspan": 1,
+              "bbox": [
+                1157,
+                149,
+                1355,
+                421
+              ],
+              "borders": {
+                "top": true,
+                "bottom": true,
+                "left": true,
+                "right": true
+              },
+              "border_support": {
+                "top": [
+                  1.0
+                ],
+                "bottom": [
+                  1.0
+                ],
+                "left": [
+                  1.0,
+                  0.5863874345549738
+                ],
+                "right": [
+                  1.0,
+                  1.0
+                ]
+              },
+              "uncertain": false,
+              "text": "注"
             },
             {
               "row": 1,
@@ -2611,7 +2807,7 @@
                   1.0,
                   1.0,
                   1.0,
-                  0.9642857142857143
+                  1.0
                 ]
               },
               "uncertain": false,
@@ -2645,7 +2841,7 @@
                   1.0,
                   1.0,
                   1.0,
-                  0.9642857142857143
+                  1.0
                 ],
                 "right": [
                   1.0,

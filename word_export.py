@@ -17,18 +17,29 @@ def _element(parent, name, **attributes):
     return node
 
 
-def _page_size(section, width, height):
-    # 保持原图比例，短边为 A4 短边；每页独立设置纸张与边距。
-    short = Cm(21)
-    ratio = min(width,height)
-    section.page_width = int(short*width/ratio)
-    section.page_height = int(short*height/ratio)
-    section.top_margin = section.bottom_margin = Cm(.5)
-    section.left_margin = section.right_margin = Cm(.5)
-    return min((section.page_width-Cm(1))/width,(section.page_height-Cm(1))/height)
+def _page_size(section, page):
+    # 所有纸页统一 A4 纵向；只缩放有效内容，原照片留白不参与排版。
+    section.page_width, section.page_height = Cm(21), Cm(29.7)
+    section.top_margin = section.bottom_margin = Cm(1)
+    section.left_margin = section.right_margin = Cm(1)
+    boxes = [t['bbox'] for t in page['tables']]
+    boxes += [b['block_bbox'] for b in page.get('blocks', [])
+              if b.get('block_label') != 'table' and b.get('block_bbox')
+              and (b.get('block_content') or b.get('image_path'))]
+    if not boxes:
+        boxes = [[0, 0, page['width'], page['height']]]
+    left = min(b[0] for b in boxes); top = min(b[1] for b in boxes)
+    width = max(b[2] for b in boxes)-left
+    height = max(b[3] for b in boxes)-top
+    usable_w, usable_h = section.page_width-Cm(2), section.page_height-Cm(2)
+    scale = min(usable_w/max(1,width), usable_h/max(1,height))
+    # 同一个比例用于横纵坐标、列宽和行高，保证表格不变形。
+    offset = (Cm(1)+(usable_w-width*scale)/2-left*scale,
+              Cm(1)+(usable_h-height*scale)/2-top*scale)
+    return scale, offset
 
 
-def _add_table(doc, data, scale):
+def _add_table(doc, data, scale, offset):
     xs,ys=data['columns'],data['rows']
     table=doc.add_table(rows=len(ys)-1,cols=len(xs)-1)
     table.autofit=False
@@ -36,7 +47,7 @@ def _add_table(doc, data, scale):
     # 浮动表格使用纸页坐标定位，避免上下段落把表格挤离原位置。
     twips=lambda pixel: round(pixel*scale/635)
     _element(props,'tblpPr',horzAnchor='page',vertAnchor='page',
-             tblpX=round(Cm(.5)/635)+twips(xs[0]),tblpY=round(Cm(.5)/635)+twips(ys[0]),
+             tblpX=round((offset[0]+xs[0]*scale)/635),tblpY=round((offset[1]+ys[0]*scale)/635),
              leftFromText=0,rightFromText=0,topFromText=0,bottomFromText=0)
     width=props.find(qn('w:tblW')); width.set(qn('w:type'),'dxa'); width.set(qn('w:w'),str(twips(xs[-1]-xs[0])))
     margins=_element(props,'tblCellMar')
@@ -73,7 +84,7 @@ def _add_table(doc, data, scale):
             across=max(1,int((height_pt if vertical else width_pt)/font))
             lines=sum(max(1,math.ceil(len(line)/across)) for line in text.split('\n'))
             return lines*font*1.08 <= (width_pt if vertical else height_pt)
-        while size>5 and not fits(size):
+        while size>4 and not fits(size):
             size-=.5
         if text and not fits(size):
             # 不静默截断：确实容不下时允许该行扩展，并在结构数据中记录。
@@ -120,9 +131,9 @@ def export_word(pages, destination):
     style.paragraph_format.space_after=Pt(0)
     for index,page in enumerate(pages):
         section=doc.sections[0] if not index else doc.add_section(WD_SECTION_START.NEW_PAGE)
-        scale=_page_size(section,page['width'],page['height'])
+        scale,offset=_page_size(section,page)
         for table in page['tables']:
-            for cell in _add_table(doc,table,scale):
+            for cell in _add_table(doc,table,scale,offset):
                 warnings.append({'page':index+1,'bbox':cell['bbox'],'reason':'文字可能需要扩展行高'})
         # 表格外的文字和草图用框架定位；整张表格始终是 Word 表格。
         for block in page.get('blocks',[]):
@@ -135,7 +146,7 @@ def export_word(pages, destination):
             paragraph=doc.add_paragraph()
             _element(paragraph._p.get_or_add_pPr(),'framePr',
                            hAnchor='page',vAnchor='page',wrap='none',
-                           x=round((Cm(.5)+x*scale)/635),y=round((Cm(.5)+y*scale)/635),
+                           x=round((offset[0]+x*scale)/635),y=round((offset[1]+y*scale)/635),
                            w=max(1,round((right-x)*scale/635)))
             if block.get('image_path'):
                 paragraph.add_run().add_picture(block['image_path'],width=int((right-x)*scale))

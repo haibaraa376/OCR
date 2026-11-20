@@ -51,6 +51,55 @@ def _support(mask, coordinate, start, end, horizontal):
     return float(np.any(strip, axis=axis).mean()) if strip.size else 0.
 
 
+def _local_verticals(binary, hm, vm, xs, ys):
+    """逐行带验证短竖线，只补有像素及交点支持的局部区间。"""
+    h, w = binary.shape
+    radius = max(1, round(w*.002))
+    # 与基础网格使用相同的共线容差，避免斜线在表头处变成重复窄列。
+    alignment = max(radius*3, round(w*.012))
+    short_length = max(3, round(h*.008))
+    short = cv2.morphologyEx(binary, cv2.MORPH_OPEN,
+                            np.ones((short_length, 1), np.uint8))
+    aligned = xs[:]
+    candidates = xs[:]
+    # 将短线按横坐标聚类，保留原有长线检测结果。
+    count, _, stats, _ = cv2.connectedComponentsWithStats(short)
+    for x, y, width, height, area in stats[1:]:
+        if height < short_length or width > max(radius*3, height*.15):
+            continue
+        x = int(x+width/2)
+        if all(abs(x-known)>radius*3 for known in candidates):
+            candidates.append(x)
+    restored = vm.copy()
+    accepted = xs[:]
+    for x in sorted(candidates):
+        # 若短线与长线基本共线，使用统一列坐标，避免重复窄列。
+        nearest = min(xs, key=lambda value: abs(value-x))
+        coordinate = nearest if abs(nearest-x)<=alignment else x
+        for top, bottom in zip(ys, ys[1:]):
+            margin = max(1, round((bottom-top)*.08))
+            strip = short[top+margin:bottom-margin, max(0,x-radius):x+radius+1]
+            if not strip.size:
+                continue
+            hits = np.any(strip>0, axis=1)
+            # 文字笔画通常缺乏从上到下的持续性；要求大部分区间都有线。
+            if hits.mean()<.8:
+                continue
+            runs = np.split(np.flatnonzero(hits), np.where(np.diff(np.flatnonzero(hits))>1)[0]+1)
+            if max((len(run) for run in runs), default=0)<len(hits)*.55:
+                continue
+            upper = _support(hm, top, max(0,x-radius*3), min(w,x+radius*3+1), True)
+            lower = _support(hm, bottom, max(0,x-radius*3), min(w,x+radius*3+1), True)
+            collinear = any(abs(x-known)<=alignment for known in aligned)
+            if not ((upper>.6 and lower>.6) or (collinear and max(upper,lower)>.7)):
+                continue
+            # 补线仅限当前横线之间，不穿过上层合并表头。
+            cv2.line(restored,(coordinate,top),(coordinate,bottom),255,max(1,radius))
+            if coordinate not in accepted:
+                accepted.append(coordinate)
+    return restored, sorted(accepted)
+
+
 def _topology(xs, ys, hm, vm, boxes):
     """缺边连接形成连通区域；仅接受矩形、且内部没有实线的合并。"""
     nr, nc = len(ys)-1, len(xs)-1
@@ -63,10 +112,14 @@ def _topology(xs, ys, hm, vm, boxes):
         while parent[i]!=i:
             parent[i]=parent[parent[i]]; i=parent[i]
         return i
-    def connect(a, b, support, x, y):
+    def connect(a, b, support, x, y, vertical=False):
         # 低覆盖且有 PP 跨界证据时合并；有少量墨迹但不确定的边保留标记。
         crosses = any(q[0]<x<q[2] and q[1]<y<q[3] for q in boxes)
-        if support < .12 or (support < .3 and crosses):
+        # 竖边低覆盖不等于不存在，需额外的模型跨界证据才允许合并。
+        if vertical and support < .55 and not crosses:
+            uncertain.update((a,b))
+            return
+        if (support < .12 and (not vertical or crosses)) or (support < .3 and crosses):
             parent[find(a)] = find(b)
         elif support < .55:
             uncertain.update((a,b))
@@ -74,7 +127,7 @@ def _topology(xs, ys, hm, vm, boxes):
         for c in range(nc):
             i=r*nc+c
             if c+1<nc:
-                connect(i,i+1,vb[r][c+1],xs[c+1],(ys[r]+ys[r+1])/2)
+                connect(i,i+1,vb[r][c+1],xs[c+1],(ys[r]+ys[r+1])/2,True)
             if r+1<nr:
                 connect(i,i+nc,hb[r+1][c],(xs[c]+xs[c+1])/2,ys[r+1])
     groups={}
@@ -148,6 +201,7 @@ def recover_tables(image, result, debug_dir=None):
         xs,ys=_boundaries(vm,hm,False),_boundaries(hm,vm,True)
         if len(xs)<2 or len(ys)<2:
             continue
+        vm,xs=_local_verticals(binary,hm,vm,xs,ys)
         candidates=[b for t in result.get('table_res_list',[]) for b in t.get('cell_box_list',[])
                     if x1<=(b[0]+b[2])/2<=x2 and y1<=(b[1]+b[3])/2<=y2]
         boxes=[[a-x1,b-y1,c-x1,d-y1] for a,b,c,d in candidates]
