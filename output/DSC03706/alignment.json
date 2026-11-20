@@ -1,0 +1,83 @@
+{
+  "source_image": "F:\\Apps\\Works\\vscode_works\\handwritten_ocr2\\input\\12-LZD-10\\DSC03706.JPG",
+  "source_size": [
+    3072,
+    2048
+  ],
+  "seam_x_original": 1479,
+  "coordinate_system": "original_photo_to_rendered_template_pixels_200dpi",
+  "pages": [
+    {
+      "side": "left",
+      "crop_box_original": [
+        0,
+        0,
+        1525,
+        2048
+      ],
+      "status": "success",
+      "template_type": "left",
+      "template_page": 3,
+      "template_image": "rendered/left.png",
+      "matrix_original_to_template": [
+        [
+          1.2293052220669933,
+          0.038711469993121216,
+          -107.87451511080076
+        ],
+        [
+          0.03039812280987188,
+          1.0794884693341182,
+          -14.689950005129905
+        ],
+        [
+          3.3154763231921634e-05,
+          1.8404036061530923e-05,
+          1.0
+        ]
+      ],
+      "line_overlap": 0.665148673988749,
+      "feature_matches": 139,
+      "ransac_inliers": 20,
+      "aligned_image": "page_01.png",
+      "method": "table_frame",
+      "overlay_image": "overlay_01.png"
+    },
+    {
+      "side": "right",
+      "crop_box_original": [
+        1433,
+        0,
+        3072,
+        2048
+      ],
+      "status": "success",
+      "template_type": "right",
+      "template_page": 4,
+      "template_image": "rendered/right.png",
+      "matrix_original_to_template": [
+        [
+          1.0444100024434366,
+          0.0030755704246846053,
+          -1801.8624929039308
+        ],
+        [
+          -0.058695044026837354,
+          0.9581594834240387,
+          134.87155033659027
+        ],
+        [
+          -4.64565942665368e-05,
+          1.3507033763323109e-05,
+          1.0
+        ]
+      ],
+      "line_overlap": 0.3461023338872492,
+      "feature_matches": 190,
+      "ransac_inliers": 30,
+      "aligned_image": "page_02.png",
+      "method": "table_frame",
+      "overlay_image": "overlay_02.png"
+    }
+  ]
+}
