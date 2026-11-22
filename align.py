@@ -57,6 +57,39 @@ def _table_corners(image):
     return None
 
 
+def _vertical_lines(image):
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    edges = cv2.Canny(gray, 35, 100)
+    profile = np.mean(edges[int(image.shape[0] * .27):int(image.shape[0] * .83)] > 0, axis=0).astype(np.float32)
+    smooth = cv2.GaussianBlur(profile.reshape(1, -1), (9, 1), 0).ravel()
+    maxima = cv2.dilate(smooth.reshape(1, -1), np.ones((1, 17), np.uint8)).ravel()
+    return np.where((smooth >= maxima - 1e-5) & (smooth > .13))[0].astype(np.float32)
+
+
+def _refine_lines(warped, template):
+    source, target = _vertical_lines(warped), _vertical_lines(template)
+    pairs = []
+    for x in target:
+        if len(source):
+            nearest = source[np.argmin(abs(source - x))]
+            if abs(nearest - x) <= 35:
+                pairs.append((float(x), float(nearest)))
+    if len(pairs) < 5:
+        return warped, [], "insufficient_internal_lines"
+    x_target, x_source = zip(*pairs)
+    width, height = template.shape[1], template.shape[0]
+    grid = np.arange(width, dtype=np.float32)
+    mapped = np.interp(grid, [0, *x_target, width - 1],
+                       [x_source[0] - x_target[0], *x_source,
+                        x_source[-1] + width - 1 - x_target[-1]]).astype(np.float32)
+    if np.any(np.diff(mapped) < .5):
+        return warped, [], "non_monotonic_correction"
+    map_x = np.tile(mapped, (height, 1))
+    map_y = np.tile(np.arange(height, dtype=np.float32)[:, None], (1, width))
+    corrected = cv2.remap(warped, map_x, map_y, cv2.INTER_LINEAR, borderValue=(255, 255, 255))
+    return corrected, [[round(a, 2), round(b, 2)] for a, b in pairs], "applied"
+
+
 def align_one(crop, box, template, full_shape):
     detector = cv2.SIFT_create(nfeatures=6000)
     k1, d1 = detector.detectAndCompute(_structure(crop), None)
@@ -93,13 +126,21 @@ def align_one(crop, box, template, full_shape):
     score, H, warped, method = max(evaluated, key=lambda c: c[0])
     if score < .25:
         return None, f"表格线重合度不足（{score:.3f}）"
+    corrected, knots, correction_status = _refine_lines(warped, template)
+    corrected_score = _geometry_score(corrected, template)
+    if correction_status == "applied" and corrected_score >= score:
+        warped, score = corrected, corrected_score
+    else:
+        knots = []
+        correction_status = "rejected_no_improvement"
     # crop 像素坐标加上裁剪偏移，得到完整照片坐标；矩阵组合后可直接映射原图。
     x0, y0 = box[:2]
     offset = np.array([[1, 0, -x0], [0, 1, -y0], [0, 0, 1]], np.float64)
     full_H = H @ offset
     full_H /= full_H[2, 2]
     return {"matrix": full_H.tolist(), "aligned": warped, "score": score,
-            "matches": len(good), "inliers": inlier_count, "method": method}, None
+            "matches": len(good), "inliers": inlier_count, "method": method,
+            "local_x_knots_target_to_base": knots, "local_correction": correction_status}, None
 
 
 def run_alignment(photo_path, template_data, template_dir, output_dir):
@@ -136,6 +177,8 @@ def run_alignment(photo_path, template_data, template_dir, output_dir):
                            "line_overlap": result["score"], "feature_matches": result["matches"],
                            "ransac_inliers": result["inliers"], "aligned_image": f"page_{n:02d}.png",
                            "method": result["method"],
+                           "local_x_knots_target_to_base": result["local_x_knots_target_to_base"],
+                           "local_correction": result["local_correction"],
                            "overlay_image": f"overlay_{n:02d}.png"})
         else:
             record["reason"] = "; ".join(failures)

@@ -7,6 +7,25 @@ import numpy as np
 import pymupdf
 
 
+def _fields(kind):
+    # 固定日志表格的 200 DPI 像素坐标；边界留白以避开印刷线。
+    columns = (
+        [("date_shift", "日期班次", 99, 154, "text"), ("operation", "作业名称及纯钻时间", 156, 379, "text"),
+         ("depth_from", "钻进深度由", 382, 454, "number"), ("depth_to", "钻进深度至", 457, 529, "number"),
+         ("depth_total", "钻进深度共", 532, 605, "number"), ("bit_diameter", "钻头直径", 609, 680, "number"),
+         ("core_length", "岩心长度", 684, 777, "number"), ("recovery", "采取率", 780, 876, "number"),
+         ("run_number", "回次编号", 879, 974, "text"), ("lithology", "岩层名称及特征", 978, 1553, "long_text")]
+        if kind == "left" else
+        [("section", "柱状剖面", 99, 304, "text"), ("layer_depth", "层深和层厚", 307, 379, "number"),
+         ("drilling_condition", "钻进情况", 382, 568, "long_text"), ("casing_diameter", "套管直径", 572, 646, "number"),
+         ("casing_depth", "套管累计深度", 649, 729, "number"), ("penetration_count", "标贯贯入击数", 733, 810, "number"),
+         ("rod_length", "钻杆长度", 814, 953, "number"), ("water_level", "含水量和水位", 957, 1178, "number"),
+         ("sample_number", "送试验件编号", 1182, 1324, "text"), ("remarks", "注", 1328, 1553, "long_text")])
+    y0, y1 = (478, 1991) if kind == "left" else (514, 2027)
+    return [{"id": f"{kind}.{key}", "name": name, "bbox": [x0, y0, x1, y1],
+             "type": field_type, "multiple_records": True} for key, name, x0, x1, field_type in columns]
+
+
 def _ink_profile(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     binary = (gray < 205).astype(np.uint8)
@@ -20,6 +39,21 @@ def build_template(pdf_path, output_dir=None):
     output_dir = Path(output_dir or pdf_path.parent)
     rendered = output_dir / "rendered"
     rendered.mkdir(parents=True, exist_ok=True)
+    manifest = output_dir / "template.json"
+    if manifest.exists():
+        cached = json.loads(manifest.read_text(encoding="utf-8"))
+        if Path(cached.get("source_pdf", "")) == pdf_path.resolve() and all(
+                (output_dir / p["image"]).exists() for p in cached["pages"] if p.get("image")):
+            for page in cached["pages"]:
+                if page["type"] in ("left", "right"):
+                    page["fields"] = _fields(page["type"])
+                    page["image"] = f"rendered/{page['type']}.png"
+                elif page["type"] == "unknown":
+                    page["image"] = None
+            manifest.write_text(json.dumps(cached, ensure_ascii=False, indent=2), encoding="utf-8")
+            for unused in rendered.glob("page_*.png"):
+                unused.unlink()
+            return cached
     doc = pymupdf.open(pdf_path)
     pages = []
     images = []
@@ -63,9 +97,16 @@ def build_template(pdf_path, output_dir=None):
 
     for page, image in zip(pages, images):
         kind = page["type"]
-        name = kind if kind in ("cover", "left", "right") and page.get("reference_page") == page["pdf_page"] else f"page_{page['pdf_page']:02d}"
-        page["image"] = f"rendered/{name}.png"
-        cv2.imwrite(str(output_dir / page["image"]), image)
+        if kind in ("left", "right"):
+            page["fields"] = _fields(kind)
+            page["image"] = f"rendered/{kind}.png"
+            if page["reference_page"] == page["pdf_page"]:
+                cv2.imwrite(str(output_dir / page["image"]), image)
+        elif kind == "cover":
+            page["image"] = "rendered/cover.png"
+            cv2.imwrite(str(output_dir / page["image"]), image)
+        else:
+            page["image"] = None
     data = {"source_pdf": str(pdf_path.resolve()), "coordinate_system": "rendered_pixels_200dpi",
             "pages": pages}
     (output_dir / "template.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

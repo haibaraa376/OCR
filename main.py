@@ -5,6 +5,7 @@ from pathlib import Path
 
 from align import run_alignment
 from template import build_template
+from recognize import recognize
 
 
 def main():
@@ -19,6 +20,8 @@ def main():
     data = build_template(pdf)
     result = run_alignment(image, data, pdf.parent, out)
     (out / "alignment.json").write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    recognized = recognize(result, data, pdf.parent, out)
+    (out / "result.json").write_text(json.dumps(recognized, ensure_ascii=False, indent=2), encoding="utf-8")
     for page in result["pages"]:
         print(f"{page['side']}: {page['status']} " +
               (f"PDF 第 {page['template_page']} 页，线条重合度 {page['line_overlap']:.3f}" if page['status'] == "success" else page["reason"]))

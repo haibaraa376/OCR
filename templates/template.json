@@ -315,7 +315,7 @@
       "printed_lines": [],
       "type": "unknown",
       "fields": [],
-      "image": "rendered/page_01.png"
+      "image": null
     },
     {
       "pdf_page": 2,
@@ -1269,7 +1269,128 @@
       ],
       "printed_lines": [],
       "type": "left",
-      "fields": [],
+      "fields": [
+        {
+          "id": "left.date_shift",
+          "name": "日期班次",
+          "bbox": [
+            99,
+            478,
+            154,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.operation",
+          "name": "作业名称及纯钻时间",
+          "bbox": [
+            156,
+            478,
+            379,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_from",
+          "name": "钻进深度由",
+          "bbox": [
+            382,
+            478,
+            454,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_to",
+          "name": "钻进深度至",
+          "bbox": [
+            457,
+            478,
+            529,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_total",
+          "name": "钻进深度共",
+          "bbox": [
+            532,
+            478,
+            605,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.bit_diameter",
+          "name": "钻头直径",
+          "bbox": [
+            609,
+            478,
+            680,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.core_length",
+          "name": "岩心长度",
+          "bbox": [
+            684,
+            478,
+            777,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.recovery",
+          "name": "采取率",
+          "bbox": [
+            780,
+            478,
+            876,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.run_number",
+          "name": "回次编号",
+          "bbox": [
+            879,
+            478,
+            974,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.lithology",
+          "name": "岩层名称及特征",
+          "bbox": [
+            978,
+            478,
+            1553,
+            1991
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        }
+      ],
       "reference_page": 3,
       "image": "rendered/left.png"
     },
@@ -2053,7 +2174,128 @@
       ],
       "printed_lines": [],
       "type": "right",
-      "fields": [],
+      "fields": [
+        {
+          "id": "right.section",
+          "name": "柱状剖面",
+          "bbox": [
+            99,
+            514,
+            304,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.layer_depth",
+          "name": "层深和层厚",
+          "bbox": [
+            307,
+            514,
+            379,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.drilling_condition",
+          "name": "钻进情况",
+          "bbox": [
+            382,
+            514,
+            568,
+            2027
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.casing_diameter",
+          "name": "套管直径",
+          "bbox": [
+            572,
+            514,
+            646,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.casing_depth",
+          "name": "套管累计深度",
+          "bbox": [
+            649,
+            514,
+            729,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.penetration_count",
+          "name": "标贯贯入击数",
+          "bbox": [
+            733,
+            514,
+            810,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.rod_length",
+          "name": "钻杆长度",
+          "bbox": [
+            814,
+            514,
+            953,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.water_level",
+          "name": "含水量和水位",
+          "bbox": [
+            957,
+            514,
+            1178,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.sample_number",
+          "name": "送试验件编号",
+          "bbox": [
+            1182,
+            514,
+            1324,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.remarks",
+          "name": "注",
+          "bbox": [
+            1328,
+            514,
+            1553,
+            2027
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        }
+      ],
       "reference_page": 4,
       "image": "rendered/right.png"
     },
@@ -2567,9 +2809,130 @@
       ],
       "printed_lines": [],
       "type": "left",
-      "fields": [],
+      "fields": [
+        {
+          "id": "left.date_shift",
+          "name": "日期班次",
+          "bbox": [
+            99,
+            478,
+            154,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.operation",
+          "name": "作业名称及纯钻时间",
+          "bbox": [
+            156,
+            478,
+            379,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_from",
+          "name": "钻进深度由",
+          "bbox": [
+            382,
+            478,
+            454,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_to",
+          "name": "钻进深度至",
+          "bbox": [
+            457,
+            478,
+            529,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_total",
+          "name": "钻进深度共",
+          "bbox": [
+            532,
+            478,
+            605,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.bit_diameter",
+          "name": "钻头直径",
+          "bbox": [
+            609,
+            478,
+            680,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.core_length",
+          "name": "岩心长度",
+          "bbox": [
+            684,
+            478,
+            777,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.recovery",
+          "name": "采取率",
+          "bbox": [
+            780,
+            478,
+            876,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.run_number",
+          "name": "回次编号",
+          "bbox": [
+            879,
+            478,
+            974,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.lithology",
+          "name": "岩层名称及特征",
+          "bbox": [
+            978,
+            478,
+            1553,
+            1991
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        }
+      ],
       "reference_page": 3,
-      "image": "rendered/page_05.png"
+      "image": "rendered/left.png"
     },
     {
       "pdf_page": 6,
@@ -3351,9 +3714,130 @@
       ],
       "printed_lines": [],
       "type": "right",
-      "fields": [],
+      "fields": [
+        {
+          "id": "right.section",
+          "name": "柱状剖面",
+          "bbox": [
+            99,
+            514,
+            304,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.layer_depth",
+          "name": "层深和层厚",
+          "bbox": [
+            307,
+            514,
+            379,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.drilling_condition",
+          "name": "钻进情况",
+          "bbox": [
+            382,
+            514,
+            568,
+            2027
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.casing_diameter",
+          "name": "套管直径",
+          "bbox": [
+            572,
+            514,
+            646,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.casing_depth",
+          "name": "套管累计深度",
+          "bbox": [
+            649,
+            514,
+            729,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.penetration_count",
+          "name": "标贯贯入击数",
+          "bbox": [
+            733,
+            514,
+            810,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.rod_length",
+          "name": "钻杆长度",
+          "bbox": [
+            814,
+            514,
+            953,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.water_level",
+          "name": "含水量和水位",
+          "bbox": [
+            957,
+            514,
+            1178,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.sample_number",
+          "name": "送试验件编号",
+          "bbox": [
+            1182,
+            514,
+            1324,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.remarks",
+          "name": "注",
+          "bbox": [
+            1328,
+            514,
+            1553,
+            2027
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        }
+      ],
       "reference_page": 4,
-      "image": "rendered/page_06.png"
+      "image": "rendered/right.png"
     },
     {
       "pdf_page": 7,
@@ -3865,9 +4349,130 @@
       ],
       "printed_lines": [],
       "type": "left",
-      "fields": [],
+      "fields": [
+        {
+          "id": "left.date_shift",
+          "name": "日期班次",
+          "bbox": [
+            99,
+            478,
+            154,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.operation",
+          "name": "作业名称及纯钻时间",
+          "bbox": [
+            156,
+            478,
+            379,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_from",
+          "name": "钻进深度由",
+          "bbox": [
+            382,
+            478,
+            454,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_to",
+          "name": "钻进深度至",
+          "bbox": [
+            457,
+            478,
+            529,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.depth_total",
+          "name": "钻进深度共",
+          "bbox": [
+            532,
+            478,
+            605,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.bit_diameter",
+          "name": "钻头直径",
+          "bbox": [
+            609,
+            478,
+            680,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.core_length",
+          "name": "岩心长度",
+          "bbox": [
+            684,
+            478,
+            777,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.recovery",
+          "name": "采取率",
+          "bbox": [
+            780,
+            478,
+            876,
+            1991
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "left.run_number",
+          "name": "回次编号",
+          "bbox": [
+            879,
+            478,
+            974,
+            1991
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "left.lithology",
+          "name": "岩层名称及特征",
+          "bbox": [
+            978,
+            478,
+            1553,
+            1991
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        }
+      ],
       "reference_page": 3,
-      "image": "rendered/page_07.png"
+      "image": "rendered/left.png"
     },
     {
       "pdf_page": 8,
@@ -4649,9 +5254,130 @@
       ],
       "printed_lines": [],
       "type": "right",
-      "fields": [],
+      "fields": [
+        {
+          "id": "right.section",
+          "name": "柱状剖面",
+          "bbox": [
+            99,
+            514,
+            304,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.layer_depth",
+          "name": "层深和层厚",
+          "bbox": [
+            307,
+            514,
+            379,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.drilling_condition",
+          "name": "钻进情况",
+          "bbox": [
+            382,
+            514,
+            568,
+            2027
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.casing_diameter",
+          "name": "套管直径",
+          "bbox": [
+            572,
+            514,
+            646,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.casing_depth",
+          "name": "套管累计深度",
+          "bbox": [
+            649,
+            514,
+            729,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.penetration_count",
+          "name": "标贯贯入击数",
+          "bbox": [
+            733,
+            514,
+            810,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.rod_length",
+          "name": "钻杆长度",
+          "bbox": [
+            814,
+            514,
+            953,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.water_level",
+          "name": "含水量和水位",
+          "bbox": [
+            957,
+            514,
+            1178,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.sample_number",
+          "name": "送试验件编号",
+          "bbox": [
+            1182,
+            514,
+            1324,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.remarks",
+          "name": "注",
+          "bbox": [
+            1328,
+            514,
+            1553,
+            2027
+          ],
+          "type": "long_text",
+          "multiple_records": true
+        }
+      ],
       "reference_page": 4,
-      "image": "rendered/page_08.png"
+      "image": "rendered/right.png"
     }
   ]
 }
