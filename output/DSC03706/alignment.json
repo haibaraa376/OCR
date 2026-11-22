@@ -39,7 +39,7 @@
       "line_overlap": 0.7340834003035985,
       "feature_matches": 139,
       "ransac_inliers": 20,
-      "aligned_image": "page_01.png",
+      "aligned_image": "images/page_01.png",
       "method": "table_frame",
       "local_x_knots_target_to_base": [
         [
@@ -88,7 +88,7 @@
         ]
       ],
       "local_correction": "applied",
-      "overlay_image": "overlay_01.png"
+      "overlay_image": "images/overlay_01.png"
     },
     {
       "side": "right",
@@ -122,7 +122,7 @@
       "line_overlap": 0.8836156650710583,
       "feature_matches": 190,
       "ransac_inliers": 30,
-      "aligned_image": "page_02.png",
+      "aligned_image": "images/page_02.png",
       "method": "table_frame",
       "local_x_knots_target_to_base": [
         [
@@ -187,7 +187,7 @@
         ]
       ],
       "local_correction": "applied",
-      "overlay_image": "overlay_02.png"
+      "overlay_image": "images/overlay_02.png"
     }
   ]
 }

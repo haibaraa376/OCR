@@ -17,75 +17,8 @@
             154,
             1991
           ],
-          "items": [
-            {
-              "text_raw": "合",
-              "confidence": 0.9894499182701111,
-              "bbox_template": [
-                99,
-                542,
-                154,
-                593
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "8:00",
-              "confidence": 0.9515095353126526,
-              "bbox_template": [
-                99,
-                585,
-                154,
-                625
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "7:00",
-              "confidence": 0.9910638332366943,
-              "bbox_template": [
-                99,
-                1234,
-                154,
-                1314
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "141",
-              "confidence": 0.4458928406238556,
-              "bbox_template": [
-                99,
-                1313,
-                154,
-                1380
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "合班",
-              "confidence": 0.5446934103965759,
-              "bbox_template": [
-                99,
-                1369,
-                154,
-                1436
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "9:00",
-              "confidence": 0.8466887474060059,
-              "bbox_template": [
-                99,
-                1424,
-                154,
-                1472
-              ],
-              "field_assignment_uncertain": true
-            }
-          ],
-          "status": "recognized"
+          "items": [],
+          "status": "empty_or_not_detected"
         },
         {
           "field_id": "left.operation",
@@ -100,443 +33,483 @@
           "items": [
             {
               "text_raw": "人工挖探",
-              "confidence": 0.9531654715538025,
+              "confidence": 0.9742698669433594,
               "bbox_template": [
-                173,
-                494,
-                365,
+                180,
+                493,
+                381,
                 547
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0:50",
-              "confidence": 0.9966354370117188,
+              "confidence": 0.997535228729248,
               "bbox_template": [
-                224,
-                538,
-                318,
-                571
+                228,
+                539,
+                326,
+                572
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "机械安装",
-              "confidence": 0.9941602945327759,
+              "confidence": 0.9935296177864075,
               "bbox_template": [
-                167,
-                553,
-                372,
-                626
+                170,
+                552,
+                385,
+                629
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1:00",
-              "confidence": 0.8613073825836182,
+              "confidence": 0.9140042066574097,
               "bbox_template": [
-                218,
-                605,
-                357,
-                647
+                224,
+                606,
+                360,
+                646
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "合金于钻",
-              "confidence": 0.8850455284118652,
+              "text_raw": "合金干钻",
+              "confidence": 0.9320474863052368,
               "bbox_template": [
-                168,
-                630,
-                369,
+                172,
+                629,
+                384,
                 692
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0:10",
-              "confidence": 0.9845312833786011,
+              "confidence": 0.9630076885223389,
               "bbox_template": [
-                222,
+                227,
                 680,
-                350,
+                360,
                 716
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "取元样2-1",
-              "confidence": 0.9071440100669861,
+              "confidence": 0.9071080684661865,
               "bbox_template": [
-                175,
-                706,
-                366,
+                180,
+                705,
+                384,
                 758
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "0:16",
-              "confidence": 0.9108992218971252,
+              "text_raw": "10:16",
+              "confidence": 0.8092471361160278,
               "bbox_template": [
-                210,
-                748,
-                333,
-                787
+                198,
+                747,
+                376,
+                786
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "取原样2-2",
-              "confidence": 0.8583225607872009,
+              "text_raw": "取虎样2-2",
+              "confidence": 0.8502686023712158,
               "bbox_template": [
-                181,
+                187,
                 776,
-                372,
-                824
+                385,
+                822
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "1000",
-              "confidence": 0.7521147727966309,
+              "text_raw": "10yo",
+              "confidence": 0.499137818813324,
               "bbox_template": [
-                203,
+                208,
                 814,
-                325,
-                857
+                339,
+                854
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "low_confidence_review"
             },
             {
               "text_raw": "标贯！",
-              "confidence": 0.672877311706543,
+              "confidence": 0.7592227458953857,
               "bbox_template": [
-                190,
-                834,
-                333,
-                903
+                198,
+                840,
+                347,
+                899
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "040",
-              "confidence": 0.9343225359916687,
+              "text_raw": "0:40",
+              "confidence": 0.7370756268501282,
               "bbox_template": [
-                235,
+                242,
                 890,
-                315,
+                328,
                 922
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "合金于钻",
-              "confidence": 0.9221635460853577,
+              "confidence": 0.9648771286010742,
               "bbox_template": [
-                161,
-                901,
-                369,
-                967
+                165,
+                898,
+                383,
+                970
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0:15",
-              "confidence": 0.99603271484375,
+              "confidence": 0.9026508927345276,
               "bbox_template": [
-                223,
+                229,
                 951,
-                317,
+                344,
                 991
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "取院样3-1",
-              "confidence": 0.8368528485298157,
+              "text_raw": "取反样3-1",
+              "confidence": 0.8822690844535828,
               "bbox_template": [
-                173,
-                983,
-                357,
-                1032
+                176,
+                981,
+                369,
+                1033
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:10",
-              "confidence": 0.9987804889678955,
+              "confidence": 0.9941227436065674,
               "bbox_template": [
-                224,
-                1024,
-                320,
+                230,
+                1023,
+                340,
                 1060
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "取民样3-2",
-              "confidence": 0.791003942489624,
+              "confidence": 0.8606426119804382,
               "bbox_template": [
-                171,
-                1050,
-                361,
-                1103
+                177,
+                1053,
+                372,
+                1102
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "0:10",
-              "confidence": 0.9759932160377502,
+              "text_raw": "10:10",
+              "confidence": 0.8689223527908325,
               "bbox_template": [
-                200,
-                1093,
-                317,
-                1136
+                198,
+                1091,
+                324,
+                1137
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "林贯2",
-              "confidence": 0.9343592524528503,
+              "confidence": 0.9304885864257812,
               "bbox_template": [
-                176,
+                179,
                 1125,
-                322,
-                1174
+                333,
+                1172
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:10",
-              "confidence": 0.8909024596214294,
+              "confidence": 0.914742112159729,
               "bbox_template": [
-                217,
-                1164,
-                321,
+                219,
+                1162,
+                339,
                 1203
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "合金干钻",
-              "confidence": 0.9162716865539551,
+              "confidence": 0.9476606845855713,
               "bbox_template": [
-                159,
-                1188,
-                343,
-                1245
+                162,
+                1186,
+                356,
+                1243
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:05",
-              "confidence": 0.9996228814125061,
+              "confidence": 0.9996669292449951,
               "bbox_template": [
-                220,
-                1231,
-                313,
-                1268
+                226,
+                1230,
+                325,
+                1267
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "辅助5：40",
-              "confidence": 0.9589517712593079,
+              "confidence": 0.9486933350563049,
               "bbox_template": [
-                156,
+                157,
                 1258,
-                365,
-                1310
+                378,
+                1309
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "合金干钻",
-              "confidence": 0.9287656545639038,
+              "confidence": 0.9059534668922424,
               "bbox_template": [
-                167,
-                1312,
-                360,
+                169,
+                1311,
+                372,
                 1363
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0:05",
-              "confidence": 0.9828988313674927,
+              "confidence": 0.9524948596954346,
               "bbox_template": [
-                223,
-                1357,
-                315,
+                229,
+                1356,
+                331,
                 1397
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "取原样4-1",
-              "confidence": 0.8777512907981873,
+              "confidence": 0.8893590569496155,
               "bbox_template": [
-                170,
-                1389,
-                358,
-                1442
+                176,
+                1390,
+                370,
+                1441
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:10",
-              "confidence": 0.9289094805717468,
+              "confidence": 0.9721226096153259,
               "bbox_template": [
-                220,
-                1435,
-                300,
+                226,
+                1434,
+                319,
                 1471
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "取反样4-2",
-              "confidence": 0.8608123660087585,
+              "text_raw": "取原样4-2",
+              "confidence": 0.9021889567375183,
               "bbox_template": [
-                166,
-                1462,
-                356,
-                1514
+                172,
+                1465,
+                369,
+                1511
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:10",
-              "confidence": 0.9957141876220703,
+              "confidence": 0.9833589792251587,
               "bbox_template": [
-                217,
-                1504,
-                305,
-                1537
+                221,
+                1503,
+                318,
+                1536
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "林贯3",
-              "confidence": 0.7403932213783264,
+              "confidence": 0.7481985092163086,
               "bbox_template": [
-                186,
-                1529,
-                312,
-                1577
+                190,
+                1528,
+                325,
+                1576
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "040",
-              "confidence": 0.9955441355705261,
+              "confidence": 0.9982731938362122,
               "bbox_template": [
-                222,
-                1572,
-                303,
-                1609
+                229,
+                1571,
+                316,
+                1608
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "合金干钻",
-              "confidence": 0.9717432856559753,
+              "confidence": 0.9513823986053467,
               "bbox_template": [
-                170,
-                1596,
-                352,
+                175,
+                1598,
+                365,
                 1649
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "015",
-              "confidence": 0.9962449073791504,
+              "text_raw": "0215",
+              "confidence": 0.9342989921569824,
               "bbox_template": [
-                221,
+                228,
                 1642,
-                310,
+                322,
                 1682
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "动操",
-              "confidence": 0.5442119836807251,
+              "text_raw": "功操",
+              "confidence": 0.5422583818435669,
               "bbox_template": [
-                193,
+                198,
                 1672,
-                331,
+                343,
                 1722
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "low_confidence_review"
             },
             {
               "text_raw": "0:15",
-              "confidence": 0.9726033210754395,
+              "confidence": 0.971781849861145,
               "bbox_template": [
-                225,
-                1711,
-                299,
-                1750
+                229,
+                1707,
+                312,
+                1751
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "合金泥浆",
-              "confidence": 0.9993147253990173,
+              "confidence": 0.9994069933891296,
               "bbox_template": [
-                175,
+                179,
                 1743,
-                358,
+                372,
                 1803
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:20",
-              "confidence": 0.9993427395820618,
+              "confidence": 0.99970543384552,
               "bbox_template": [
-                226,
-                1791,
-                324,
-                1833
+                236,
+                1792,
+                335,
+                1832
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "合金泥浆",
-              "confidence": 0.9840152859687805,
+              "confidence": 0.9803470373153687,
               "bbox_template": [
-                180,
-                1823,
-                365,
-                1883
+                184,
+                1821,
+                378,
+                1882
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
               "text_raw": "0:45",
-              "confidence": 0.9939743280410767,
+              "confidence": 0.9929776787757874,
               "bbox_template": [
-                234,
-                1873,
-                324,
-                1914
+                239,
+                1871,
+                334,
+                1916
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.operation",
+              "review_status": "ok"
             },
             {
-              "text_raw": "辅助5:10",
-              "confidence": 0.8373860716819763,
+              "text_raw": "车南助5=10",
+              "confidence": 0.7548218369483948,
               "bbox_template": [
-                158,
-                1904,
-                362,
+                159,
+                1903,
+                376,
                 1977
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.operation",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -554,201 +527,219 @@
           "items": [
             {
               "text_raw": "0.00",
-              "confidence": 0.9996695518493652,
+              "confidence": 0.9994394183158875,
               "bbox_template": [
-                382,
-                499,
-                454,
-                548
+                381,
+                495,
+                463,
+                556
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "2.00",
-              "confidence": 0.9960779547691345,
+              "confidence": 0.9937984943389893,
               "bbox_template": [
-                382,
-                625,
-                453,
-                686
+                373,
+                617,
+                462,
+                691
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.00",
-              "confidence": 0.999699592590332,
+              "confidence": 0.9987746477127075,
               "bbox_template": [
-                382,
-                703,
-                454,
+                378,
+                697,
+                463,
                 764
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.20",
-              "confidence": 0.9984978437423706,
+              "confidence": 0.995551347732544,
               "bbox_template": [
-                382,
-                766,
-                454,
-                825
+                373,
+                761,
+                463,
+                827
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.40",
-              "confidence": 0.9588875770568848,
+              "confidence": 0.8841215372085571,
               "bbox_template": [
-                382,
-                834,
-                451,
-                892
+                374,
+                825,
+                462,
+                897
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.85",
-              "confidence": 0.9981536865234375,
+              "confidence": 0.9998291730880737,
               "bbox_template": [
-                382,
-                903,
-                451,
-                960
+                377,
+                895,
+                460,
+                962
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.00",
-              "confidence": 0.995521068572998,
+              "confidence": 0.9944894909858704,
               "bbox_template": [
-                382,
-                969,
-                451,
-                1033
+                374,
+                962,
+                462,
+                1034
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "20",
-              "confidence": 0.9996740221977234,
+              "text_raw": "5.20",
+              "confidence": 0.9807479977607727,
               "bbox_template": [
-                382,
-                1038,
-                450,
-                1097
+                375,
+                1034,
+                458,
+                1100
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.40",
-              "confidence": 0.9817720055580139,
+              "confidence": 0.9906355738639832,
               "bbox_template": [
-                382,
-                1114,
-                444,
-                1166
+                373,
+                1103,
+                456,
+                1174
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.85",
-              "confidence": 0.9992755651473999,
+              "confidence": 0.9998209476470947,
               "bbox_template": [
-                382,
-                1185,
-                445,
-                1241
+                375,
+                1176,
+                456,
+                1247
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": ".20",
-              "confidence": 0.8379080891609192,
+              "text_raw": "6.20",
+              "confidence": 0.9989367723464966,
               "bbox_template": [
-                382,
-                1318,
-                445,
-                1369
+                375,
+                1311,
+                461,
+                1376
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7.00",
-              "confidence": 0.9410131573677063,
+              "confidence": 0.9990860819816589,
               "bbox_template": [
-                382,
-                1392,
-                438,
-                1443
+                374,
+                1385,
+                451,
+                1450
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": ".20",
-              "confidence": 0.9196768403053284,
+              "text_raw": "7.20",
+              "confidence": 0.9927725791931152,
               "bbox_template": [
-                382,
-                1463,
-                439,
-                1514
+                373,
+                1455,
+                451,
+                1520
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "40",
-              "confidence": 0.9971655607223511,
+              "text_raw": "7.40",
+              "confidence": 0.9595076441764832,
               "bbox_template": [
-                382,
-                1524,
-                436,
-                1578
+                373,
+                1517,
+                449,
+                1582
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "85",
-              "confidence": 0.9947410821914673,
+              "text_raw": "7.85",
+              "confidence": 0.9993592500686646,
               "bbox_template": [
-                382,
-                1594,
-                444,
-                1651
+                373,
+                1587,
+                454,
+                1656
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "00",
-              "confidence": 0.998783528804779,
+              "text_raw": "9.00",
+              "confidence": 0.9991153478622437,
               "bbox_template": [
-                382,
-                1663,
-                446,
-                1724
+                373,
+                1656,
+                458,
+                1730
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "7.35",
-              "confidence": 0.7268897294998169,
+              "text_raw": "9.35",
+              "confidence": 0.9941931366920471,
               "bbox_template": [
-                382,
-                1750,
-                437,
-                1807
+                374,
+                1740,
+                451,
+                1813
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "10.00",
-              "confidence": 0.9986300468444824,
+              "confidence": 0.9986432194709778,
               "bbox_template": [
-                382,
-                1827,
-                453,
-                1881
+                381,
+                1824,
+                459,
+                1883
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_from",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -766,201 +757,219 @@
           "items": [
             {
               "text_raw": "2.00",
-              "confidence": 0.9995632767677307,
+              "confidence": 0.9997130632400513,
               "bbox_template": [
-                457,
-                499,
-                529,
-                547
+                448,
+                494,
+                538,
+                554
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.00",
-              "confidence": 0.9693543910980225,
+              "confidence": 0.9982489943504333,
               "bbox_template": [
-                457,
-                621,
-                529,
-                690
+                448,
+                617,
+                538,
+                691
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.20",
-              "confidence": 0.9983966946601868,
+              "confidence": 0.9986414909362793,
               "bbox_template": [
-                457,
+                448,
                 697,
-                529,
-                766
+                538,
+                763
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.40",
-              "confidence": 0.9957852363586426,
+              "confidence": 0.9982406497001648,
               "bbox_template": [
-                457,
-                764,
-                529,
+                448,
+                759,
+                538,
                 826
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.85",
-              "confidence": 0.9872997999191284,
+              "confidence": 0.9962930679321289,
               "bbox_template": [
-                457,
-                829,
-                529,
-                897
+                448,
+                824,
+                537,
+                896
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.00",
-              "confidence": 0.99322509765625,
+              "confidence": 0.9907523393630981,
               "bbox_template": [
-                457,
-                896,
-                529,
-                965
+                450,
+                897,
+                538,
+                964
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.20",
-              "confidence": 0.9999020099639893,
+              "confidence": 0.9998027086257935,
               "bbox_template": [
-                457,
-                968,
-                529,
-                1035
+                452,
+                969,
+                536,
+                1034
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.40",
-              "confidence": 0.9999122619628906,
+              "confidence": 0.999506950378418,
               "bbox_template": [
-                457,
+                448,
                 1034,
-                529,
-                1097
+                538,
+                1099
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.85",
-              "confidence": 0.9218429327011108,
+              "confidence": 0.9861635565757751,
               "bbox_template": [
-                457,
-                1107,
-                529,
-                1166
+                449,
+                1102,
+                537,
+                1170
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "6.20",
-              "confidence": 0.9997425079345703,
+              "confidence": 0.9991822838783264,
               "bbox_template": [
-                457,
-                1185,
-                529,
-                1245
+                455,
+                1183,
+                536,
+                1246
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7.00",
-              "confidence": 0.9895913600921631,
+              "confidence": 0.9981924295425415,
               "bbox_template": [
-                457,
-                1317,
-                521,
-                1371
+                448,
+                1314,
+                522,
+                1377
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7.20",
-              "confidence": 0.9373899102210999,
+              "confidence": 0.9635487198829651,
               "bbox_template": [
-                457,
-                1392,
-                521,
-                1448
+                448,
+                1384,
+                525,
+                1452
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "240",
-              "confidence": 0.8387258052825928,
+              "confidence": 0.9253461956977844,
               "bbox_template": [
-                457,
-                1458,
-                525,
-                1518
+                448,
+                1455,
+                527,
+                1519
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "285",
-              "confidence": 0.995495080947876,
+              "confidence": 0.9996967315673828,
               "bbox_template": [
-                457,
-                1518,
-                519,
-                1580
+                448,
+                1517,
+                521,
+                1584
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "9.00",
-              "confidence": 0.9298721551895142,
+              "confidence": 0.9339929819107056,
               "bbox_template": [
-                457,
-                1596,
-                520,
-                1656
+                448,
+                1587,
+                523,
+                1659
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "935",
-              "confidence": 0.9877354502677917,
+              "text_raw": "9.35",
+              "confidence": 0.8404122591018677,
               "bbox_template": [
-                457,
-                1666,
-                521,
-                1729
+                452,
+                1660,
+                526,
+                1734
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "10.00",
-              "confidence": 0.9891664385795593,
+              "confidence": 0.9708282351493835,
               "bbox_template": [
-                457,
-                1754,
-                529,
-                1811
+                453,
+                1750,
+                534,
+                1814
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "11.40",
-              "confidence": 0.9654687643051147,
+              "confidence": 0.9313540458679199,
               "bbox_template": [
-                457,
-                1831,
-                529,
-                1886
+                448,
+                1826,
+                538,
+                1889
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_to",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -978,201 +987,219 @@
           "items": [
             {
               "text_raw": "2.00",
-              "confidence": 0.9962199926376343,
+              "confidence": 0.9965857267379761,
               "bbox_template": [
-                534,
-                499,
-                605,
-                550
+                523,
+                491,
+                614,
+                558
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.00",
-              "confidence": 0.9778214693069458,
+              "confidence": 0.9966396689414978,
               "bbox_template": [
-                533,
-                620,
-                605,
-                687
+                523,
+                608,
+                614,
+                692
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.20",
-              "confidence": 0.9931139349937439,
+              "confidence": 0.9958118200302124,
               "bbox_template": [
-                532,
+                523,
                 690,
-                605,
+                614,
                 761
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.20",
-              "confidence": 0.9953269958496094,
+              "confidence": 0.9565080404281616,
               "bbox_template": [
-                532,
-                759,
-                605,
-                823
+                523,
+                756,
+                614,
+                825
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.45",
-              "confidence": 0.9892698526382446,
+              "confidence": 0.9081065058708191,
               "bbox_template": [
-                532,
-                823,
-                605,
-                887
+                523,
+                818,
+                614,
+                891
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.15",
-              "confidence": 0.9901823997497559,
+              "confidence": 0.9994093179702759,
               "bbox_template": [
-                532,
-                903,
-                605,
-                964
+                523,
+                896,
+                613,
+                965
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "0.20",
-              "confidence": 0.9998518228530884,
+              "text_raw": "10.20",
+              "confidence": 0.9136949777603149,
               "bbox_template": [
-                532,
+                523,
                 966,
-                605,
-                1029
+                614,
+                1032
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.20",
-              "confidence": 0.9992159605026245,
+              "confidence": 0.9738752841949463,
               "bbox_template": [
-                532,
-                1029,
-                605,
-                1091
+                523,
+                1027,
+                614,
+                1094
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.45",
-              "confidence": 0.9967656135559082,
+              "confidence": 0.9975325465202332,
               "bbox_template": [
-                532,
-                1104,
-                605,
-                1162
+                523,
+                1095,
+                614,
+                1169
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.35",
-              "confidence": 0.999643087387085,
+              "confidence": 0.9992780685424805,
               "bbox_template": [
-                532,
-                1181,
-                605,
-                1238
+                523,
+                1174,
+                614,
+                1243
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.80",
-              "confidence": 0.999530017375946,
+              "confidence": 0.9997118711471558,
               "bbox_template": [
-                532,
-                1317,
-                600,
-                1370
+                525,
+                1312,
+                608,
+                1375
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.20",
-              "confidence": 0.9958987236022949,
+              "confidence": 0.9741945266723633,
               "bbox_template": [
-                532,
-                1388,
-                604,
-                1447
+                523,
+                1377,
+                612,
+                1450
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.20",
-              "confidence": 0.9993878602981567,
+              "confidence": 0.9994087219238281,
               "bbox_template": [
-                532,
-                1453,
-                605,
-                1514
+                523,
+                1450,
+                610,
+                1516
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.45",
-              "confidence": 0.9992235898971558,
+              "confidence": 0.9986133575439453,
               "bbox_template": [
-                532,
-                1514,
-                600,
-                1575
+                525,
+                1509,
+                608,
+                1577
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.15",
-              "confidence": 0.9992536902427673,
+              "confidence": 0.992805540561676,
               "bbox_template": [
-                532,
-                1597,
-                597,
-                1659
+                527,
+                1589,
+                605,
+                1661
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "0.05",
-              "confidence": 0.867994487285614,
+              "text_raw": "0.25",
+              "confidence": 0.93083256483078,
               "bbox_template": [
-                532,
-                1668,
-                605,
-                1731
+                525,
+                1663,
+                611,
+                1734
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.65",
-              "confidence": 0.9993178844451904,
+              "confidence": 0.9998177289962769,
               "bbox_template": [
-                532,
-                1752,
-                602,
-                1812
+                529,
+                1747,
+                607,
+                1815
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.40",
-              "confidence": 0.9769391417503357,
+              "confidence": 0.9948320388793945,
               "bbox_template": [
-                532,
-                1823,
-                605,
-                1884
+                523,
+                1820,
+                614,
+                1888
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.depth_total",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -1189,81 +1216,88 @@
           ],
           "items": [
             {
-              "text_raw": "130",
-              "confidence": 0.9999752044677734,
+              "text_raw": "0130",
+              "confidence": 0.9414475560188293,
               "bbox_template": [
+                600,
                 611,
-                629,
-                680,
-                678
+                689,
+                688
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "cross_column_review"
             },
             {
               "text_raw": "130",
-              "confidence": 0.9999775886535645,
+              "confidence": 0.9999834895133972,
               "bbox_template": [
-                609,
-                909,
-                680,
-                956
+                600,
+                901,
+                688,
+                962
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "130",
-              "confidence": 0.9999746680259705,
+              "confidence": 0.9999447464942932,
               "bbox_template": [
-                609,
-                1189,
-                680,
-                1229
+                608,
+                1176,
+                681,
+                1236
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "130",
-              "confidence": 0.9997255206108093,
+              "confidence": 0.9995093941688538,
               "bbox_template": [
-                609,
-                1321,
-                668,
-                1364
+                604,
+                1307,
+                670,
+                1373
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "130",
-              "confidence": 0.9998167157173157,
+              "confidence": 0.9996804594993591,
               "bbox_template": [
-                609,
-                1607,
-                680,
-                1651
+                615,
+                1598,
+                675,
+                1655
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "ok"
             },
             {
               "text_raw": "110",
-              "confidence": 0.9932308793067932,
+              "confidence": 0.9925574660301208,
               "bbox_template": [
-                610,
-                1768,
+                617,
+                1753,
                 671,
-                1804
+                1812
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "ok"
             },
             {
               "text_raw": "110",
-              "confidence": 0.9989845156669617,
+              "confidence": 0.9985139966011047,
               "bbox_template": [
-                611,
-                1841,
-                676,
-                1877
+                600,
+                1826,
+                674,
+                1886
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.bit_diameter",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -1281,80 +1315,87 @@
           "items": [
             {
               "text_raw": "1.00",
-              "confidence": 0.9431062936782837,
+              "confidence": 0.9973620176315308,
               "bbox_template": [
-                699,
-                630,
-                776,
-                677
+                675,
+                615,
+                779,
+                686
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.15",
-              "confidence": 0.9999287724494934,
+              "confidence": 0.999822199344635,
               "bbox_template": [
-                701,
-                911,
-                776,
-                957
+                688,
+                903,
+                772,
+                961
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.35",
-              "confidence": 0.9998606443405151,
+              "confidence": 0.9999030828475952,
               "bbox_template": [
-                689,
-                1182,
-                777,
-                1227
+                686,
+                1176,
+                773,
+                1232
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "0.80",
-              "confidence": 0.9987865090370178,
+              "confidence": 0.9996856451034546,
               "bbox_template": [
                 689,
-                1315,
-                777,
-                1360
+                1305,
+                781,
+                1366
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.15",
-              "confidence": 0.9833332300186157,
+              "confidence": 0.9980043172836304,
               "bbox_template": [
-                684,
-                1609,
-                759,
-                1656
+                686,
+                1601,
+                758,
+                1661
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "ok"
             },
             {
               "text_raw": "0.50",
-              "confidence": 0.9950008988380432,
+              "confidence": 0.9798616170883179,
               "bbox_template": [
-                709,
-                1753,
-                777,
-                1808
+                703,
+                1747,
+                781,
+                1813
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "ok"
             },
             {
               "text_raw": "1.15",
-              "confidence": 0.9962010383605957,
+              "confidence": 0.9977462887763977,
               "bbox_template": [
-                702,
-                1842,
-                777,
-                1883
+                699,
+                1832,
+                771,
+                1889
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.core_length",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
@@ -1372,80 +1413,87 @@
           "items": [
             {
               "text_raw": "100",
-              "confidence": 0.9999818205833435,
+              "confidence": 0.9999659657478333,
               "bbox_template": [
-                799,
-                629,
-                876,
+                795,
+                621,
+                874,
                 676
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.recovery",
+              "review_status": "ok"
             },
             {
               "text_raw": "100",
-              "confidence": 0.9999778270721436,
-              "bbox_template": [
-                798,
-                911,
-                874,
-                954
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "100",
-              "confidence": 0.9999375343322754,
-              "bbox_template": [
-                792,
-                1185,
-                861,
-                1218
-              ],
-              "field_assignment_uncertain": false
-            },
-            {
-              "text_raw": "100",
-              "confidence": 0.9999589920043945,
+              "confidence": 0.9999668002128601,
               "bbox_template": [
                 794,
-                1318,
-                860,
-                1356
+                905,
+                868,
+                956
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.recovery",
+              "review_status": "ok"
             },
             {
               "text_raw": "100",
-              "confidence": 0.9999702572822571,
+              "confidence": 0.9999454617500305,
               "bbox_template": [
-                790,
-                1614,
-                859,
-                1656
+                784,
+                1170,
+                862,
+                1224
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.recovery",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "100",
+              "confidence": 0.9999699592590332,
+              "bbox_template": [
+                788,
+                1309,
+                861,
+                1360
+              ],
+              "field_id": "left.recovery",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "100",
+              "confidence": 0.9999787211418152,
+              "bbox_template": [
+                784,
+                1606,
+                858,
+                1660
+              ],
+              "field_id": "left.recovery",
+              "review_status": "ok"
             },
             {
               "text_raw": "80",
-              "confidence": 0.9996010065078735,
+              "confidence": 0.9995616674423218,
               "bbox_template": [
-                798,
-                1770,
-                852,
-                1807
+                794,
+                1764,
+                849,
+                1810
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.recovery",
+              "review_status": "ok"
             },
             {
               "text_raw": "82",
-              "confidence": 0.9052533507347107,
+              "confidence": 0.9519033432006836,
               "bbox_template": [
-                800,
-                1840,
-                860,
-                1875
+                791,
+                1825,
+                861,
+                1881
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.recovery",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
@@ -1463,80 +1511,87 @@
           "items": [
             {
               "text_raw": "1-3",
-              "confidence": 0.9984371662139893,
+              "confidence": 0.9984667897224426,
               "bbox_template": [
-                891,
-                624,
-                974,
-                678
+                886,
+                621,
+                980,
+                679
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.run_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "4-6",
-              "confidence": 0.9990749955177307,
+              "confidence": 0.998396098613739,
               "bbox_template": [
-                887,
-                894,
-                974,
+                882,
+                896,
+                980,
                 959
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.run_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7",
-              "confidence": 0.9997454285621643,
+              "confidence": 0.9996356964111328,
               "bbox_template": [
-                902,
+                899,
                 1180,
-                940,
+                941,
                 1227
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.run_number",
+              "review_status": "ok"
             },
             {
               "text_raw": "8-9",
-              "confidence": 0.9984726905822754,
+              "confidence": 0.9983226656913757,
               "bbox_template": [
-                879,
-                1307,
-                962,
+                873,
+                1308,
+                963,
                 1367
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.run_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "10-12",
-              "confidence": 0.999563992023468,
+              "confidence": 0.9998143911361694,
               "bbox_template": [
-                879,
-                1605,
-                974,
+                875,
+                1610,
+                980,
                 1656
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.run_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "13",
-              "confidence": 0.999692440032959,
+              "confidence": 0.9998201131820679,
               "bbox_template": [
-                879,
-                1764,
-                972,
-                1817
+                894,
+                1766,
+                954,
+                1814
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.run_number",
+              "review_status": "ok"
             },
             {
               "text_raw": "14-15",
-              "confidence": 0.9994986653327942,
+              "confidence": 0.9996421933174133,
               "bbox_template": [
-                879,
-                1826,
-                974,
-                1878
+                873,
+                1823,
+                980,
+                1877
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.run_number",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -1554,228 +1609,249 @@
           "items": [
             {
               "text_raw": "0.00-6.20m",
-              "confidence": 0.9956668019294739,
+              "confidence": 0.9938849210739136,
               "bbox_template": [
-                989,
+                988,
                 529,
-                1286,
-                600
+                1289,
+                602
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "ok"
             },
             {
-              "text_raw": "新黄土浅黄色、硬塑、土质",
-              "confidence": 0.8894819617271423,
+              "text_raw": "新黄土浅黄色、硬塑土质",
+              "confidence": 0.9381727576255798,
               "bbox_template": [
-                986,
-                591,
-                1537,
-                676
+                987,
+                590,
+                1543,
+                678
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "不均匀：粉粒含量约60%岩",
-              "confidence": 0.9296757578849792,
+              "confidence": 0.9530273079872131,
               "bbox_template": [
-                982,
+                984,
                 656,
-                1534,
-                739
+                1538,
+                740
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "芯易散落.呈散状：0.00—0.40",
-              "confidence": 0.9280951619148254,
+              "confidence": 0.9217199683189392,
               "bbox_template": [
-                984,
-                719,
-                1549,
+                988,
+                720,
+                1553,
                 793
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "m为耕植土含植物根系",
-              "confidence": 0.9973875880241394,
+              "confidence": 0.9963489770889282,
               "bbox_template": [
-                983,
+                985,
                 772,
-                1539,
-                851
+                1543,
+                852
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "2.10—3.00为软塑黄褐色含",
-              "confidence": 0.983435332775116,
+              "confidence": 0.9847937226295471,
               "bbox_template": [
-                988,
-                832,
-                1543,
-                898
+                987,
+                830,
+                1550,
+                902
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "水量大.",
-              "confidence": 0.9486398100852966,
+              "confidence": 0.9606056213378906,
               "bbox_template": [
-                982,
-                891,
-                1149,
-                951
+                983,
+                890,
+                1152,
+                952
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "ok"
             },
             {
               "text_raw": "6.20—8.70m",
-              "confidence": 0.9660887718200684,
+              "confidence": 0.9596861004829407,
               "bbox_template": [
                 980,
-                1039,
-                1246,
-                1101
+                1037,
+                1250,
+                1103
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "ok"
             },
             {
               "text_raw": "新黄土.黄褐色软塑土质不",
-              "confidence": 0.9544312357902527,
+              "confidence": 0.941724956035614,
               "bbox_template": [
-                985,
+                986,
                 1075,
-                1545,
-                1169
+                1550,
+                1170
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "均匀.粉粒含量约50%岩芯",
-              "confidence": 0.957648515701294,
+              "confidence": 0.9584241509437561,
               "bbox_template": [
-                983,
-                1144,
-                1535,
+                984,
+                1145,
+                1540,
                 1236
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "呈碎块状含水量大",
-              "confidence": 0.9963634014129639,
+              "confidence": 0.9970012903213501,
               "bbox_template": [
-                978,
-                1212,
-                1390,
-                1302
+                975,
+                1213,
+                1394,
+                1301
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "ok"
             },
             {
               "text_raw": "8.70-1490m",
-              "confidence": 0.9890145063400269,
+              "confidence": 0.9824415445327759,
               "bbox_template": [
                 978,
                 1410,
-                1221,
+                1224,
                 1472
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "ok"
             },
             {
-              "text_raw": "砂岩.灰白色.弱风化、泥质胶",
-              "confidence": 0.8864189386367798,
+              "text_raw": "砂岩.灰白色、弱风化、泥质胶",
+              "confidence": 0.8895614743232727,
               "bbox_template": [
-                978,
-                1451,
-                1546,
-                1542
+                972,
+                1450,
+                1552,
+                1544
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "结.砂质结构（田砂）.矿物成份",
-              "confidence": 0.8798425197601318,
+              "confidence": 0.8784279227256775,
               "bbox_template": [
-                978,
+                980,
                 1525,
-                1548,
-                1610
+                1553,
+                1611
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "主要为石英，长石.岩芯不完整",
-              "confidence": 0.9100152254104614,
+              "confidence": 0.9137601256370544,
               "bbox_template": [
                 978,
-                1592,
-                1534,
-                1679
+                1591,
+                1540,
+                1681
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "呈短柱状碎块状一般块",
-              "confidence": 0.9884872436523438,
+              "confidence": 0.9925018548965454,
               "bbox_template": [
-                979,
+                981,
                 1657,
-                1536,
+                1541,
                 1741
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "径15-40mm最大块经65momn.一般",
-              "confidence": 0.8621680736541748,
+              "text_raw": "径15-40mm最大块经65mom.一般",
+              "confidence": 0.8689546585083008,
               "bbox_template": [
-                980,
-                1713,
-                1547,
-                1800
+                981,
+                1712,
+                1554,
+                1801
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "柱长10—15cm最大柱长25cm岩",
-              "confidence": 0.9372468590736389,
+              "confidence": 0.9660810828208923,
               "bbox_template": [
-                979,
-                1768,
-                1549,
+                981,
+                1769,
+                1555,
                 1862
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "质硬锤击声脆不易碎.8.70—",
-              "confidence": 0.9132484793663025,
+              "confidence": 0.9312368035316467,
               "bbox_template": [
-                980,
+                982,
                 1827,
-                1545,
+                1551,
                 1933
               ],
-              "field_assignment_uncertain": true
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "9.10m为泥岩，紫红色，全风化、",
-              "confidence": 0.9499247074127197,
+              "confidence": 0.9608440399169922,
               "bbox_template": [
-                988,
-                1907,
-                1532,
-                1983
+                990,
+                1908,
+                1537,
+                1984
               ],
-              "field_assignment_uncertain": false
+              "field_id": "left.lithology",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
         }
-      ]
+      ],
+      "unassigned": []
     },
     {
       "side": "right",
@@ -1794,36 +1870,39 @@
           "items": [
             {
               "text_raw": "22",
-              "confidence": 0.9253200888633728,
+              "confidence": 0.9535439014434814,
               "bbox_template": [
-                101,
-                1762,
-                282,
-                1820
+                112,
+                1761,
+                281,
+                1823
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.section",
+              "review_status": "ok"
             },
             {
               "text_raw": "~~~",
-              "confidence": 0.7883641719818115,
+              "confidence": 0.8111927509307861,
               "bbox_template": [
-                99,
-                1833,
-                286,
-                1891
+                107,
+                1832,
+                285,
+                1895
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.section",
+              "review_status": "ok"
             },
             {
               "text_raw": "22~",
-              "confidence": 0.5113338232040405,
+              "confidence": 0.4446658790111542,
               "bbox_template": [
-                100,
+                110,
                 1904,
                 288,
-                1958
+                1959
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.section",
+              "review_status": "low_confidence_review"
             }
           ],
           "status": "recognized"
@@ -1841,58 +1920,63 @@
           "items": [
             {
               "text_raw": "8.7",
-              "confidence": 0.9942271113395691,
+              "confidence": 0.8913702964782715,
               "bbox_template": [
-                312,
-                1206,
-                379,
+                316,
+                1207,
+                370,
                 1248
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.layer_depth",
+              "review_status": "ok"
             },
             {
               "text_raw": "8.7",
-              "confidence": 0.9992963671684265,
+              "confidence": 0.9989769458770752,
               "bbox_template": [
-                308,
+                314,
                 1244,
-                372,
+                367,
                 1288
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.layer_depth",
+              "review_status": "ok"
             },
             {
               "text_raw": "6.2",
-              "confidence": 0.9976008534431458,
+              "confidence": 0.9935007095336914,
               "bbox_template": [
-                307,
-                1716,
+                298,
+                1712,
                 357,
-                1757
+                1759
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.layer_depth",
+              "review_status": "ok"
             },
             {
-              "text_raw": "14.9",
-              "confidence": 0.9838052988052368,
+              "text_raw": "154.9",
+              "confidence": 0.9311473965644836,
               "bbox_template": [
-                307,
-                1757,
-                367,
+                298,
+                1756,
+                365,
                 1804
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.layer_depth",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.5",
-              "confidence": 0.5916617512702942,
+              "confidence": 0.8746654987335205,
               "bbox_template": [
-                307,
-                1976,
-                355,
-                2021
+                298,
+                1967,
+                357,
+                2026
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.layer_depth",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
@@ -1910,36 +1994,39 @@
           "items": [
             {
               "text_raw": "7-8m",
-              "confidence": 0.9922189712524414,
+              "confidence": 0.993607759475708,
               "bbox_template": [
-                407,
-                837,
-                568,
-                930
+                412,
+                844,
+                574,
+                924
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.drilling_condition",
+              "review_status": "ok"
             },
             {
               "text_raw": "漏水",
-              "confidence": 0.9781426191329956,
+              "confidence": 0.9858274459838867,
               "bbox_template": [
-                410,
-                919,
+                411,
+                920,
                 568,
-                1034
+                1032
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.drilling_condition",
+              "review_status": "ok"
             },
             {
               "text_raw": "严重",
-              "confidence": 0.9993801116943359,
+              "confidence": 0.9993047714233398,
               "bbox_template": [
-                405,
-                993,
-                568,
-                1120
+                401,
+                988,
+                552,
+                1121
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.drilling_condition",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
@@ -1982,37 +2069,184 @@
           ],
           "items": [
             {
-              "text_raw": "林弘加加林弘",
-              "confidence": 0.6710560917854309,
+              "text_raw": "标",
+              "confidence": 0.8752330541610718,
               "bbox_template": [
-                733,
-                687,
-                810,
-                1162
+                729,
+                680,
+                814,
+                758
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "加加加",
-              "confidence": 0.8858764171600342,
+              "text_raw": "3/10",
+              "confidence": 0.9982356429100037,
               "bbox_template": [
-                733,
-                1237,
+                738,
+                734,
+                805,
+                805
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "4/10",
+              "confidence": 0.9968504309654236,
+              "bbox_template": [
+                737,
+                787,
+                805,
+                855
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "3/10",
+              "confidence": 0.8631079792976379,
+              "bbox_template": [
+                746,
+                982,
+                812,
+                1046
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "4/10",
+              "confidence": 0.9088855981826782,
+              "bbox_template": [
+                748,
+                1034,
+                815,
+                1089
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "2/10",
+              "confidence": 0.8588494062423706,
+              "bbox_template": [
+                744,
+                1075,
+                819,
+                1158
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
+            },
+            {
+              "text_raw": "标3",
+              "confidence": 0.8294976949691772,
+              "bbox_template": [
+                732,
+                1230,
+                809,
+                1308
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
+            },
+            {
+              "text_raw": "1/10",
+              "confidence": 0.9282494783401489,
+              "bbox_template": [
+                734,
+                1284,
+                812,
+                1357
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
+            },
+            {
+              "text_raw": "210",
+              "confidence": 0.996444046497345,
+              "bbox_template": [
+                732,
+                1335,
+                808,
+                1404
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
+            },
+            {
+              "text_raw": "2/10",
+              "confidence": 0.8716769218444824,
+              "bbox_template": [
+                732,
+                1386,
                 804,
-                1469
+                1465
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "动功加如必",
-              "confidence": 0.46657228469848633,
+              "text_raw": "动",
+              "confidence": 0.9883286952972412,
               "bbox_template": [
                 733,
-                1563,
+                1555,
+                805,
+                1632
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "long_text_review"
+            },
+            {
+              "text_raw": "5/10",
+              "confidence": 0.9692779183387756,
+              "bbox_template": [
+                740,
+                1605,
+                805,
+                1669
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "810",
+              "confidence": 0.9722280502319336,
+              "bbox_template": [
+                739,
+                1650,
+                804,
+                1712
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "1110",
+              "confidence": 0.80875563621521,
+              "bbox_template": [
+                737,
+                1697,
                 803,
+                1755
+              ],
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
+            },
+            {
+              "text_raw": "50/5",
+              "confidence": 0.9425078630447388,
+              "bbox_template": [
+                731,
+                1738,
+                800,
                 1811
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.penetration_count",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
@@ -2024,290 +2258,378 @@
           "bbox": [
             814,
             514,
-            953,
+            883,
             2027
           ],
           "items": [
             {
-              "text_raw": "5.20",
-              "confidence": 0.9080647826194763,
+              "text_raw": "520",
+              "confidence": 0.999476969242096,
               "bbox_template": [
-                814,
-                757,
-                890,
-                812
+                805,
+                749,
+                892,
+                818
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.rod_length",
+              "review_status": "cross_column_review"
             },
             {
               "text_raw": "7.40",
-              "confidence": 0.9995788335800171,
+              "confidence": 0.9995091557502747,
               "bbox_template": [
-                814,
-                984,
-                889,
-                1039
+                807,
+                980,
+                892,
+                1041
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.rod_length",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "9.30",
-              "confidence": 0.9970812201499939,
+              "confidence": 0.9990346431732178,
               "bbox_template": [
-                814,
-                1324,
-                883,
-                1388
+                805,
+                1317,
+                889,
+                1387
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.rod_length",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "10.80",
-              "confidence": 0.9947301745414734,
+              "confidence": 0.985027015209198,
               "bbox_template": [
-                814,
-                1639,
-                889,
-                1693
+                805,
+                1631,
+                892,
+                1702
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.rod_length",
+              "review_status": "cross_column_review"
             }
           ],
           "status": "recognized"
         },
         {
-          "field_id": "right.water_level",
-          "name": "含水量和水位",
+          "field_id": "right.corrected_hits",
+          "name": "校正击数",
+          "type": "number",
+          "bbox": [
+            886,
+            514,
+            953,
+            2027
+          ],
+          "items": [],
+          "status": "empty_or_not_detected"
+        },
+        {
+          "field_id": "right.initial_water_level",
+          "name": "初见水位",
           "type": "number",
           "bbox": [
             957,
+            514,
+            1025,
+            2027
+          ],
+          "items": [],
+          "status": "empty_or_not_detected"
+        },
+        {
+          "field_id": "right.stable_water_level",
+          "name": "稳定水位",
+          "type": "number",
+          "bbox": [
+            1029,
+            514,
+            1102,
+            2027
+          ],
+          "items": [
+            {
+              "text_raw": "8.70",
+              "confidence": 0.8218764066696167,
+              "bbox_template": [
+                1025,
+                524,
+                1099,
+                600
+              ],
+              "field_id": "right.stable_water_level",
+              "review_status": "long_text_review"
+            }
+          ],
+          "status": "recognized"
+        },
+        {
+          "field_id": "right.stable_time",
+          "name": "稳定时间",
+          "type": "number",
+          "bbox": [
+            1106,
             514,
             1178,
             2027
           ],
           "items": [
             {
-              "text_raw": "8.724",
-              "confidence": 0.9373143911361694,
+              "text_raw": "24",
+              "confidence": 0.9976568222045898,
               "bbox_template": [
-                1018,
-                523,
-                1178,
-                607
+                1109,
+                548,
+                1163,
+                592
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.stable_time",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
         },
         {
-          "field_id": "right.sample_number",
-          "name": "送试验件编号",
+          "field_id": "right.water_sample_number",
+          "name": "水样号数",
           "type": "text",
           "bbox": [
             1182,
+            514,
+            1250,
+            2027
+          ],
+          "items": [],
+          "status": "empty_or_not_detected"
+        },
+        {
+          "field_id": "right.soil_sample_number",
+          "name": "岩土号数",
+          "type": "text",
+          "bbox": [
+            1254,
             514,
             1324,
             2027
           ],
           "items": [
             {
-              "text_raw": "挖一",
-              "confidence": 0.6992962956428528,
+              "text_raw": "挖H",
+              "confidence": 0.6620051860809326,
               "bbox_template": [
-                1235,
-                542,
-                1324,
-                613
+                1248,
+                541,
+                1330,
+                614
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.00",
-              "confidence": 0.99974524974823,
+              "confidence": 0.9686102867126465,
               "bbox_template": [
-                1243,
-                601,
-                1324,
-                649
+                1248,
+                603,
+                1323,
+                648
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "挖",
-              "confidence": 0.9987629652023315,
+              "text_raw": "挖12",
+              "confidence": 0.7929220199584961,
               "bbox_template": [
-                1239,
+                1248,
                 634,
-                1324,
+                1330,
                 701
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "1.20",
-              "confidence": 0.9996657371520996,
+              "confidence": 0.9994674921035767,
               "bbox_template": [
-                1245,
-                689,
-                1324,
-                732
+                1248,
+                690,
+                1327,
+                731
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "元2-1",
-              "confidence": 0.9005613327026367,
+              "confidence": 0.953728973865509,
               "bbox_template": [
-                1243,
+                1248,
                 756,
-                1324,
-                811
+                1327,
+                812
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.00",
-              "confidence": 0.9986560344696045,
+              "confidence": 0.9994043707847595,
               "bbox_template": [
-                1242,
-                799,
-                1324,
+                1248,
+                800,
+                1326,
                 852
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "元2",
-              "confidence": 0.8363362550735474,
+              "text_raw": "元2—2",
+              "confidence": 0.6790117025375366,
               "bbox_template": [
-                1244,
-                841,
-                1324,
-                893
+                1248,
+                839,
+                1330,
+                896
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "3.20",
-              "confidence": 0.999011218547821,
+              "confidence": 0.9992022514343262,
               "bbox_template": [
-                1246,
-                885,
-                1324,
+                1249,
+                884,
+                1330,
                 938
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "元3-1",
-              "confidence": 0.8884754180908203,
+              "confidence": 0.8537688851356506,
               "bbox_template": [
-                1246,
+                1248,
                 969,
-                1324,
+                1327,
                 1018
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.00",
-              "confidence": 0.8979547619819641,
+              "confidence": 0.988259494304657,
               "bbox_template": [
-                1245,
-                1007,
+                1250,
+                1009,
                 1324,
-                1048
+                1046
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "底了—2",
-              "confidence": 0.590069055557251,
+              "text_raw": "原3—2",
+              "confidence": 0.7851007580757141,
               "bbox_template": [
-                1243,
-                1035,
-                1324,
-                1084
+                1248,
+                1036,
+                1330,
+                1085
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "5.20",
-              "confidence": 0.998028039932251,
+              "confidence": 0.9994502663612366,
               "bbox_template": [
-                1244,
-                1069,
-                1324,
+                1248,
+                1071,
+                1330,
                 1117
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "阮4",
-              "confidence": 0.6127731204032898,
+              "confidence": 0.6207210421562195,
               "bbox_template": [
-                1247,
-                1284,
-                1324,
-                1338
+                1251,
+                1283,
+                1330,
+                1337
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7.00",
-              "confidence": 0.99802565574646,
+              "confidence": 0.999165415763855,
               "bbox_template": [
                 1250,
-                1327,
                 1324,
-                1375
+                1330,
+                1376
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "元4-",
-              "confidence": 0.8433799743652344,
+              "text_raw": "元4-2",
+              "confidence": 0.7847159504890442,
               "bbox_template": [
-                1245,
-                1366,
-                1324,
-                1420
+                1248,
+                1369,
+                1330,
+                1421
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7.20",
-              "confidence": 0.9291319251060486,
+              "confidence": 0.9184484481811523,
               "bbox_template": [
-                1249,
-                1409,
-                1324,
-                1457
+                1252,
+                1411,
+                1330,
+                1455
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "元5",
-              "confidence": 0.7852357029914856,
+              "confidence": 0.7540040016174316,
               "bbox_template": [
-                1247,
-                1453,
-                1324,
+                1251,
+                1456,
+                1326,
                 1511
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "7.40",
-              "confidence": 0.9944843053817749,
+              "confidence": 0.9992513656616211,
               "bbox_template": [
-                1247,
-                1500,
-                1324,
-                1548
+                1249,
+                1498,
+                1327,
+                1547
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.soil_sample_number",
+              "review_status": "long_text_review"
             }
           ],
           "status": "recognized"
@@ -2325,85 +2647,93 @@
           "items": [
             {
               "text_raw": "经水提净",
-              "confidence": 0.967357337474823,
-              "bbox_template": [
-                1328,
-                516,
-                1534,
-                607
-              ],
-              "field_assignment_uncertain": true
-            },
-            {
-              "text_raw": "放置二十日",
-              "confidence": 0.8211021423339844,
+              "confidence": 0.905543327331543,
               "bbox_template": [
                 1331,
-                590,
-                1548,
-                669
+                516,
+                1532,
+                605
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.remarks",
+              "review_status": "ok"
             },
             {
-              "text_raw": "小时泪得",
-              "confidence": 0.8388884663581848,
+              "text_raw": "放置二十四",
+              "confidence": 0.8432372212409973,
               "bbox_template": [
-                1328,
-                654,
-                1553,
-                728
+                1338,
+                589,
+                1550,
+                669
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.remarks",
+              "review_status": "long_text_review"
+            },
+            {
+              "text_raw": "小时测得",
+              "confidence": 0.8903908133506775,
+              "bbox_template": [
+                1333,
+                653,
+                1557,
+                727
+              ],
+              "field_id": "right.remarks",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "水位为.8.70",
-              "confidence": 0.8988354802131653,
+              "confidence": 0.9026452898979187,
               "bbox_template": [
-                1328,
-                723,
-                1553,
-                799
+                1327,
+                724,
+                1557,
+                797
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.remarks",
+              "review_status": "long_text_review"
             },
             {
-              "text_raw": "(特殊样)",
-              "confidence": 0.8179542422294617,
+              "text_raw": "（特殊样）",
+              "confidence": 0.8242962956428528,
               "bbox_template": [
-                1328,
+                1323,
                 1465,
                 1494,
-                1531
+                1529
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.remarks",
+              "review_status": "ok"
             },
             {
               "text_raw": "标是不成改动",
-              "confidence": 0.927091658115387,
+              "confidence": 0.9153997898101807,
               "bbox_template": [
                 1329,
                 1605,
-                1553,
+                1556,
                 1677
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.remarks",
+              "review_status": "long_text_review"
             },
             {
               "text_raw": "探",
-              "confidence": 0.5856724977493286,
+              "confidence": 0.7420657873153687,
               "bbox_template": [
-                1328,
-                1668,
+                1325,
+                1666,
                 1399,
                 1728
               ],
-              "field_assignment_uncertain": true
+              "field_id": "right.remarks",
+              "review_status": "ok"
             }
           ],
           "status": "recognized"
         }
-      ]
+      ],
+      "unassigned": []
     }
   ]
 }

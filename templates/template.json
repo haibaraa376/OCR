@@ -2253,6 +2253,18 @@
           "bbox": [
             814,
             514,
+            883,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.corrected_hits",
+          "name": "校正击数",
+          "bbox": [
+            886,
+            514,
             953,
             2027
           ],
@@ -2260,10 +2272,34 @@
           "multiple_records": true
         },
         {
-          "id": "right.water_level",
-          "name": "含水量和水位",
+          "id": "right.initial_water_level",
+          "name": "初见水位",
           "bbox": [
             957,
+            514,
+            1025,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.stable_water_level",
+          "name": "稳定水位",
+          "bbox": [
+            1029,
+            514,
+            1102,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.stable_time",
+          "name": "稳定时间",
+          "bbox": [
+            1106,
             514,
             1178,
             2027
@@ -2272,10 +2308,22 @@
           "multiple_records": true
         },
         {
-          "id": "right.sample_number",
-          "name": "送试验件编号",
+          "id": "right.water_sample_number",
+          "name": "水样号数",
           "bbox": [
             1182,
+            514,
+            1250,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.soil_sample_number",
+          "name": "岩土号数",
+          "bbox": [
+            1254,
             514,
             1324,
             2027
@@ -3793,6 +3841,18 @@
           "bbox": [
             814,
             514,
+            883,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.corrected_hits",
+          "name": "校正击数",
+          "bbox": [
+            886,
+            514,
             953,
             2027
           ],
@@ -3800,10 +3860,34 @@
           "multiple_records": true
         },
         {
-          "id": "right.water_level",
-          "name": "含水量和水位",
+          "id": "right.initial_water_level",
+          "name": "初见水位",
           "bbox": [
             957,
+            514,
+            1025,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.stable_water_level",
+          "name": "稳定水位",
+          "bbox": [
+            1029,
+            514,
+            1102,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.stable_time",
+          "name": "稳定时间",
+          "bbox": [
+            1106,
             514,
             1178,
             2027
@@ -3812,10 +3896,22 @@
           "multiple_records": true
         },
         {
-          "id": "right.sample_number",
-          "name": "送试验件编号",
+          "id": "right.water_sample_number",
+          "name": "水样号数",
           "bbox": [
             1182,
+            514,
+            1250,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.soil_sample_number",
+          "name": "岩土号数",
+          "bbox": [
+            1254,
             514,
             1324,
             2027
@@ -5333,6 +5429,18 @@
           "bbox": [
             814,
             514,
+            883,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.corrected_hits",
+          "name": "校正击数",
+          "bbox": [
+            886,
+            514,
             953,
             2027
           ],
@@ -5340,10 +5448,34 @@
           "multiple_records": true
         },
         {
-          "id": "right.water_level",
-          "name": "含水量和水位",
+          "id": "right.initial_water_level",
+          "name": "初见水位",
           "bbox": [
             957,
+            514,
+            1025,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.stable_water_level",
+          "name": "稳定水位",
+          "bbox": [
+            1029,
+            514,
+            1102,
+            2027
+          ],
+          "type": "number",
+          "multiple_records": true
+        },
+        {
+          "id": "right.stable_time",
+          "name": "稳定时间",
+          "bbox": [
+            1106,
             514,
             1178,
             2027
@@ -5352,10 +5484,22 @@
           "multiple_records": true
         },
         {
-          "id": "right.sample_number",
-          "name": "送试验件编号",
+          "id": "right.water_sample_number",
+          "name": "水样号数",
           "bbox": [
             1182,
+            514,
+            1250,
+            2027
+          ],
+          "type": "text",
+          "multiple_records": true
+        },
+        {
+          "id": "right.soil_sample_number",
+          "name": "岩土号数",
+          "bbox": [
+            1254,
             514,
             1324,
             2027

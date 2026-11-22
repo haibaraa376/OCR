@@ -149,6 +149,8 @@ def run_alignment(photo_path, template_data, template_dir, output_dir):
         raise ValueError(f"无法读取照片：{photo_path}")
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    images_dir = output_dir / "images"
+    images_dir.mkdir(exist_ok=True)
     crops, seam = split_pages(photo)
     refs = [p for p in template_data["pages"] if p.get("reference_page") == p["pdf_page"] and p["type"] in ("left", "right")]
     results = []
@@ -168,18 +170,18 @@ def run_alignment(photo_path, template_data, template_dir, output_dir):
         if candidates:
             _, page, result, ref = max(candidates, key=lambda c: c[0])
             n = len(results) + 1
-            cv2.imwrite(str(output_dir / f"page_{n:02d}.png"), result["aligned"])
+            cv2.imwrite(str(images_dir / f"page_{n:02d}.png"), result["aligned"])
             overlay = cv2.addWeighted(result["aligned"], .5, ref, .5, 0)
-            cv2.imwrite(str(output_dir / f"overlay_{n:02d}.png"), overlay)
+            cv2.imwrite(str(images_dir / f"overlay_{n:02d}.png"), overlay)
             record.update({"status": "success", "template_type": page["type"],
                            "template_page": page["pdf_page"], "template_image": page["image"],
                            "matrix_original_to_template": result["matrix"],
                            "line_overlap": result["score"], "feature_matches": result["matches"],
-                           "ransac_inliers": result["inliers"], "aligned_image": f"page_{n:02d}.png",
+                           "ransac_inliers": result["inliers"], "aligned_image": f"images/page_{n:02d}.png",
                            "method": result["method"],
                            "local_x_knots_target_to_base": result["local_x_knots_target_to_base"],
                            "local_correction": result["local_correction"],
-                           "overlay_image": f"overlay_{n:02d}.png"})
+                           "overlay_image": f"images/overlay_{n:02d}.png"})
         else:
             record["reason"] = "; ".join(failures)
         results.append(record)
